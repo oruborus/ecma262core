@@ -9,6 +9,8 @@ use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 
 interface Engine
 {
+    public function container(): Container;
+
     public function getAgent(): Agent;
 
     public function addFiles(string ...$paths): void;
