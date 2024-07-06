@@ -27,5 +27,5 @@ interface Engine
     /**
      * @return array<int, string>
      */
-    public static function getSupportedFeatures(): array;
+    public function getSupportedFeatures(): array;
 }
