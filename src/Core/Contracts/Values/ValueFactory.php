@@ -25,7 +25,7 @@ interface ValueFactory
 
     public function createBoolean(bool $value): BooleanValue;
 
-    public function createBreakCompletion(LanguageValue $value, EmptyValue|StringValue $target = null): BreakCompletion;
+    public function createBreakCompletion(LanguageValue $value, null|EmptyValue|StringValue $target = null): BreakCompletion;
 
     /**
      * @param int|UnspecifiedInterval[] $charSet
@@ -34,7 +34,7 @@ interface ValueFactory
 
     public function createCodePointRecord(int $codePoint, int $codeUnitCount, bool $isUnpairedSurrogate): CodePointRecord;
 
-    public function createContinueCompletion(LanguageValue $value, EmptyValue|StringValue $target = null): ContinueCompletion;
+    public function createContinueCompletion(LanguageValue $value, null|EmptyValue|StringValue $target = null): ContinueCompletion;
 
     public function createDeclarativeEnvironmentRecord(null|NullValue|EnvironmentRecord $outerEnv = null): DeclarativeEnvironmentRecord;
 
