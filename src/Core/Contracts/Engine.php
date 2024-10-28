@@ -24,6 +24,8 @@ interface Engine
 
     public function run(): LanguageValue|AbruptCompletion;
 
+    public function hostDefinedProperty(string $key): mixed;
+
     /**
      * @return array<int, string>
      */

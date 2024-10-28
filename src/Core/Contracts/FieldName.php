@@ -7,6 +7,7 @@ namespace Oru\EcmaScript\Core\Contracts;
 enum FieldName: string
 {
     case DEBUG_BACKTRACE = '__BACKTRACE__';
+    case DYNAMICALLY_CREATED_FUNCTION_OBJECT = '__DynamicallyCreatedFunctionObject__';
 
     case Environment        = '[[Environment]]';
     case FormalParameters   = '[[FormalParameters]]';
