@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Nodes\Node;
+use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Stringable;
 
 interface RealmRecord extends SpecificationValue

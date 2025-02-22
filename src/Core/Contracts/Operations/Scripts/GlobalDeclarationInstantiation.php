@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\Scripts;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\Script;
+use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\Script;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 

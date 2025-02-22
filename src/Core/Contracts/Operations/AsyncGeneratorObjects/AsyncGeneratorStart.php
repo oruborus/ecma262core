@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\AsyncGeneratorObjects;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\Node;
+use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 

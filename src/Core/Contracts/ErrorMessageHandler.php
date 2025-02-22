@@ -8,5 +8,5 @@ use Oru\EcmaScript\Core\Contracts\Agent;
 
 interface ErrorMessageHandler
 {
-    public function handleErrorMessage(Agent $agent, string $message, PositionalInformation $positionalInformation): string;
+    public function handleErrorMessage(Agent $agent, string $message, SourceText $sourceText, PositionalInformation $positionalInformation): string;
 }

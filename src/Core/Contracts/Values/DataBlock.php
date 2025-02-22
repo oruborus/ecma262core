@@ -12,6 +12,4 @@ use Iterator;
  * @template-extends ArrayAccess<int, int>
  * @template-extends Iterator<int, int>
  */
-interface DataBlock extends SpecificationValue, ArrayAccess, Iterator, Countable
-{
-}
+interface DataBlock extends SpecificationValue, ArrayAccess, Iterator, Countable {}

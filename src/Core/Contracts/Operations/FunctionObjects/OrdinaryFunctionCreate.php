@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\FunctionObjects;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\ConciseBody;
-use Oru\EcmaScript\Core\Contracts\Nodes\PropertySetParameterList;
-use Oru\EcmaScript\Core\Contracts\Nodes\UniqueFormalParameters;
+use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ConciseBody;
+use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\PropertySetParameterList;
+use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\UniqueFormalParameters;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;

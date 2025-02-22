@@ -8,6 +8,10 @@ use Oru\EcmaScript\Core\Contracts\PositionalInformation;
 
 interface HasPositionalInformation
 {
+    public PositionalInformation $position { get; }
+
+    public PositionalInformation $next { get; }
+
     public function positionalInformation(): PositionalInformation;
 
     public function line(): int;

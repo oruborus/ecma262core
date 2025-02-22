@@ -4,6 +4,4 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-interface NullValue extends LanguageValue
-{
-}
+interface NullValue extends LanguageValue {}

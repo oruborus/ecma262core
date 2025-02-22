@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Values;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
-use Oru\EcmaScript\Core\Contracts\Nodes\Module;
-use Oru\EcmaScript\Core\Contracts\Nodes\Node;
+use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\Module;
 use Oru\EcmaScript\Core\Contracts\ParameterName;
 use Oru\EcmaScript\Core\Contracts\Parameters;
 use Stringable;

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\LeftHandSideExpressions;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\Arguments;
-use Oru\EcmaScript\Core\Contracts\Nodes\MemberExpression;
-use Oru\EcmaScript\Core\Contracts\Nodes\NewExpression;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Arguments;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\MemberExpression;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\NewExpression;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 

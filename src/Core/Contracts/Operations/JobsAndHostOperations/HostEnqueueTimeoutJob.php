@@ -16,7 +16,7 @@ interface HostEnqueueTimeoutJob
     /**
      * @see https://tc39.es/ecma262/#sec-hostenqueuetimeoutjob
      * 
-     * @param callable(Agent):LanguageValue $job
+     * @param callable(Agent):LanguageValue $timeoutJob
      */
     public function __invoke(Agent $agent, callable $timeoutJob, NullValue|RealmRecord $realm, NumberValue $miliseconds): UnusedValue;
 }

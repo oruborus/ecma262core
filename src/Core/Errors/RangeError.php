@@ -6,6 +6,4 @@ namespace Oru\EcmaScript\Core\Errors;
 
 use RuntimeException;
 
-final class RangeError extends RuntimeException
-{
-}
+final class RangeError extends RuntimeException {}

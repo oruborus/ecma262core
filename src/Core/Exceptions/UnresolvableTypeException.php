@@ -6,6 +6,4 @@ namespace Oru\EcmaScript\Core\Exceptions;
 
 use RuntimeException;
 
-class UnresolvableTypeException extends RuntimeException
-{
-}
+class UnresolvableTypeException extends RuntimeException {}

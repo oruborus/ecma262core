@@ -13,9 +13,31 @@ use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface Agent extends Container
 {
+    public function setStrict(bool $strict): void;
+
+    public function isStrictCode(): bool;
+
+    public function setInEval(bool $inEval): void;
+
+    public function inEval(): bool;
+
+    /** @param string[] $currentLabelSet */
+    public function setCurrentLabelSet(array $currentLabelSet): void;
+
+    /** @return string[] */
+    public function currentLabelSet(): array;
+
+    public function setInIterationOrSwitchStatement(bool $inIterationOrSwitchStatement): void;
+
+    public function inIterationOrSwitchStatement(): bool;
+
     public function setCurrentFile(?string $file = null): void;
 
     public function getCurrentFile(): ?string;
+
+    public function setCurrentSourceText(?SourceText $sourceText = null): void;
+
+    public function getCurrentSourceText(): ?SourceText;
 
     public function engine(): Engine;
 
@@ -29,10 +51,6 @@ interface Agent extends Container
     public function popExecutionContextStack(ExecutionContext $executionContext): ExecutionContext;
 
     public function pushExecutionContextStack(ExecutionContext $executionContext): void;
-
-    public function getParser(): Parser;
-
-    public function setParser(Parser $parser): void;
 
     /**
      * @param array<string, SymbolValue> $wellKnownSymbols

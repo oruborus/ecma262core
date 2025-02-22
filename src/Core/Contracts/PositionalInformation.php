@@ -6,8 +6,6 @@ namespace Oru\EcmaScript\Core\Contracts;
 
 interface PositionalInformation
 {
-    public function lexer(): Lexer;
-
     public function line(): int;
 
     public function column(): int;
@@ -17,4 +15,13 @@ interface PositionalInformation
     public function withSize(int $size): static;
 
     public function size(): int;
+
+    /** @return non-negative-int */
+    public function current(): int;
+
+    public function advance(int $amount): static;
+
+    public function newLine(): static;
+
+    public function resetCursor(): static;
 }

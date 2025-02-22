@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Operations\FunctionObjects;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
-use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
+use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 
 interface FunctionDeclarationInstantiation

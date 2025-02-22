@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\IterationStatements;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\Expression;
-use Oru\EcmaScript\Core\Contracts\Nodes\Statement;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Expression;
+use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\Statement;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;

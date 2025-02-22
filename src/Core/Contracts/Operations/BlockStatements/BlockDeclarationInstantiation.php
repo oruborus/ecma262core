@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\BlockStatements;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\CaseBlock;
-use Oru\EcmaScript\Core\Contracts\Nodes\StatementList;
+use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\CaseBlock;
+use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\StatementList;
 use Oru\EcmaScript\Core\Contracts\Values\DeclarativeEnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\UnusedValue;
 

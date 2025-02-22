@@ -26,6 +26,9 @@ interface Engine
 
     public function hostDefinedProperty(string $key): mixed;
 
+    /** @return array<string, mixed> */
+    public function hostDefinedProperties(): array;
+
     /**
      * @return array<int, string>
      */

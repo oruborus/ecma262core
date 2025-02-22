@@ -18,6 +18,8 @@ interface GetSubstitution
      * @see https://262.ecma-international.org/12.0/#sec-getsubstitution
      * @see https://262.ecma-international.org/12.0/#table-replacement-text-symbol-substitutions
      *
+     * @param ListValue<int, StringValue> $captures
+     *
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, StringValue $matched, StringValue $str, NumberValue $position, ListValue $captures, UndefinedValue|ObjectValue $namedCaptures, StringValue $replacement): StringValue;

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\SourceText;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Nodes\AssignmentPattern;
-use Oru\EcmaScript\Core\Contracts\Nodes\LeftHandSideExpression;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentPattern;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\LeftHandSideExpression;
 
 interface AssignmentPatternCoveredByLeftHandSideExpression
 {
