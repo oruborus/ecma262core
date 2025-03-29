@@ -7,18 +7,18 @@ namespace Oru\EcmaScript\Core\Contracts\Operations\RegExpObjects;
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\CharSet;
+use Oru\EcmaScript\Core\Contracts\Values\Direction;
 use Oru\EcmaScript\Core\Contracts\Values\Matcher;
-use Oru\EcmaScript\Core\Contracts\Values\NumberValue;
+use Oru\EcmaScript\Core\Contracts\Values\RegExpRecord;
 
 interface CharacterSetMatcher
 {
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-charactersetmatcher-abstract-operation
-     */
+    /** @see https://tc39.es/ecma262/#sec-runtime-semantics-charactersetmatcher-abstract-operation */
     public function __invoke(
         Agent $agent,
+        RegExpRecord $rer,
         CharSet $a,
         BooleanValue $invert,
-        NumberValue $direction
+        Direction $direction
     ): Matcher;
 }

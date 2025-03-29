@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DecimalDigit;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DecimalDigits;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface DecimalDigitsFactory
 {
@@ -15,7 +15,7 @@ interface DecimalDigitsFactory
         DecimalDigits $decimalDigits,
         DecimalDigit $decimalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): DecimalDigits;
 }

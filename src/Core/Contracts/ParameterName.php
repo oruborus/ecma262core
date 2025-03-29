@@ -6,12 +6,13 @@ namespace Oru\EcmaScript\Core\Contracts;
 
 enum ParameterName: string
 {
-    case AWAIT    = 'AWAIT';
-    case DEFAULT  = 'DEFAULT';
-    case IN       = 'IN';
-    case N        = 'N';
-    case RETURN   = 'RETURN';
-    case SEP      = 'SEP';
-    case U        = 'U';
-    case YIELD    = 'YIELD';
+    case AWAIT                = 'AWAIT';
+    case DEFAULT              = 'DEFAULT';
+    case IN                   = 'IN';
+    case NAMED_CAPTURE_GROUPS = 'NamedCaptureGroups';
+    case RETURN               = 'RETURN';
+    case SEP                  = 'SEP';
+    case UNICODE_MODE         = 'UnicodeMode';
+    case UNICODE_SETS_MODE    = 'UnicodeSetsMode';
+    case YIELD                = 'YIELD';
 }

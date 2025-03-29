@@ -12,9 +12,6 @@ use Oru\EcmaScript\Core\Contracts\ParameterName;
 use Oru\EcmaScript\Core\Contracts\Parameters;
 use Stringable;
 
-/**
- * @psalm-import-type UnspecifiedInterval from CharSet
- */
 interface ValueFactory
 {
     public function createAlreadyResolvedRecord(BooleanValue $value): AlreadyResolvedRecord;
@@ -27,10 +24,10 @@ interface ValueFactory
 
     public function createBreakCompletion(LanguageValue $value, null|EmptyValue|StringValue $target = null): BreakCompletion;
 
-    /**
-     * @param int|UnspecifiedInterval[] $charSet
-     */
-    public function createCharSet(int|array $charSet = []): CharSet;
+    public function createCaptureRange(NumberValue $startIndex, NumberValue $endIndex): CaptureRange;
+
+    /** @param list<int>|callable(int): bool $characters */
+    public function createCharSet(array|callable $characters): CharSet;
 
     public function createCodePointRecord(int $codePoint, int $codeUnitCount, bool $isUnpairedSurrogate): CodePointRecord;
 
@@ -50,6 +47,8 @@ interface ValueFactory
      * @param StringValue|NullValue|ImportName::ALL|ImportName::ALL_BUT_DEFAULT $importName
      */
     public function createExportEntry(StringValue|NullValue $exportName, StringValue|NullValue $moduleRequest, StringValue|NullValue|ImportName $importName, StringValue|NullValue $localName): ExportEntry;
+
+    public function createFailure(): Failure;
 
     /**
      * @param "uninitialized"|"initialized"|"lexical" $thisBindingStatus
@@ -84,6 +83,14 @@ interface ValueFactory
      * @return ListValue<TKey, TValue>
      */
     public function createList(array $value = []): ListValue;
+
+    public function createMatchRecord(NumberValue $startIndex, NumberValue $endIndex): MatchRecord;
+
+    /**
+     * @param ListValue<int, int> $input
+     * @param (CaptureRange|UndefinedValue)[] $captures
+     */
+    public function createMatchState(ListValue $input, NumberValue $endIndex, array $captures): MatchState;
 
     public function createMathematicalValue(Stringable|string $integerPart = '0', Stringable|string $decimalPart = '0', Stringable|string $exponentPart = '0'): MathematicalValue;
 
@@ -138,6 +145,15 @@ interface ValueFactory
 
     public function createRealm(): RealmRecord;
 
+    public function createRegExpRecord(
+        BooleanValue $ignoreCase,
+        BooleanValue $multiline,
+        BooleanValue $dotAll,
+        BooleanValue $unicode,
+        BooleanValue $unicodeSets,
+        NumberValue $capturingGroupsCount,
+    ): RegExpRecord;
+
     /**
      * @param StringValue|ImportName::NAMESPACE $bindingName
      */
@@ -184,12 +200,10 @@ interface ValueFactory
         ListValue $starExportEntries
     ): SourceTextModuleRecord;
 
-    public function createSpecifierModulePair(StringValue $specifier, ModuleRecord $module): SpecifierModulePair;
+    /** @var int[] $values */
+    public function createSourceText(array $values): SourceText;
 
-    /**
-     * @param (ListValue<int, int>|UndefinedValue)[] $captures
-     */
-    public function createState(int $endIndex, array $captures): State;
+    public function createSpecifierModulePair(StringValue $specifier, ModuleRecord $module): SpecifierModulePair;
 
     /**
      * @param array<int, int>|string|Stringable $value

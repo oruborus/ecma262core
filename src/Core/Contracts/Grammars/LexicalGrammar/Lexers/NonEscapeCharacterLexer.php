@@ -7,8 +7,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Lexers;
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\NonEscapeCharacter;
 use Oru\EcmaScript\Core\Contracts\Parameters;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface NonEscapeCharacterLexer
 {
@@ -16,7 +16,7 @@ interface NonEscapeCharacterLexer
     public function tokenize(
         Agent $agent,
         SourceText $sourceText,
-        PositionalInformation $position,
+        Position $position,
         Parameters $parameters,
     ): ?NonEscapeCharacter;
 }

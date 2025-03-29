@@ -8,5 +8,5 @@ use Oru\EcmaScript\Core\Contracts\Agent;
 
 interface Matcher extends SpecificationValue
 {
-    public function __invoke(Agent $agent, State $x, Continuation $c): ?State;
+    public function __invoke(Agent $agent, MatchState $x, MatcherContinuation $c): MatchState|Failure;
 }

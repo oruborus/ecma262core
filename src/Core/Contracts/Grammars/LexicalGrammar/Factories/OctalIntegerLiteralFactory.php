@@ -6,15 +6,15 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\OctalDigits;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\OctalIntegerLiteral;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface OctalIntegerLiteralFactory
 {
     public function create(
         OctalDigits $octalDigits,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): OctalIntegerLiteral;
 }

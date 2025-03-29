@@ -12,12 +12,11 @@ use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 
 interface ParsePattern
 {
-
     /**
-     * @see https://262.ecma-international.org/12.0/#sec-parsepattern
+     * @see https://tc39.es/ecma262/#sec-parsepattern
      *
      * @param ListValue<int, int> $patternText
      * @return Pattern|ListValue<int, ObjectValue> $patternText
      */
-    public function __invoke(Agent $agent, ListValue $patternText, BooleanValue $u): Pattern|ListValue;
+    public function __invoke(Agent $agent, ListValue $patternText, BooleanValue $u, BooleanValue $v): Pattern|ListValue;
 }

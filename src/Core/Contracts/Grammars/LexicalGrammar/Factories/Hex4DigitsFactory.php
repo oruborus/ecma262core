@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\Hex4Digits;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\HexDigit;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface Hex4DigitsFactory
 {
@@ -17,7 +17,7 @@ interface Hex4DigitsFactory
         HexDigit $hexDigit3,
         HexDigit $hexDigit4,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): Hex4Digits;
 }

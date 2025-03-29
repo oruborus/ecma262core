@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DoubleStringCharacter;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DoubleStringCharacters;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface DoubleStringCharactersFactory
 {
@@ -15,7 +15,7 @@ interface DoubleStringCharactersFactory
         DoubleStringCharacter $singleStringCharacter,
         DoubleStringCharacters $singleStringCharacters,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): DoubleStringCharacters;
 }

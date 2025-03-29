@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\TemplateCharacter;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\TemplateCharacters;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface TemplateCharactersFactory
 {
@@ -15,7 +15,7 @@ interface TemplateCharactersFactory
         TemplateCharacter $templateCharacter,
         TemplateCharacters $templateCharacters,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): TemplateCharacters;
 }

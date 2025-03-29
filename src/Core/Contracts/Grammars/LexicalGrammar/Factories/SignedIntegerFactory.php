@@ -6,8 +6,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DecimalDigits;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\SignedInteger;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface SignedIntegerFactory
 {
@@ -16,7 +16,7 @@ interface SignedIntegerFactory
         int $sign,
         DecimalDigits $decimalDigits,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): SignedInteger;
 }

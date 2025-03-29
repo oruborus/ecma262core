@@ -6,11 +6,15 @@ namespace Oru\EcmaScript\Core\Contracts\Operations\RegExpObjects;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
+use Oru\EcmaScript\Core\Contracts\Values\ListValue;
+use Oru\EcmaScript\Core\Contracts\Values\RegExpRecord;
 
 interface IsWordChar
 {
     /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-iswordchar-abstract-operation
+     * @see https://tc39.es/ecma262/#sec-runtime-semantics-iswordchar-abstract-operation
+     *
+     * @param ListValue<int, int> $input
      */
-    public function __invoke(Agent $agent, int $e): BooleanValue;
+    public function __invoke(Agent $agent, RegExpRecord $rer, ListValue $input, int $e): BooleanValue;
 }

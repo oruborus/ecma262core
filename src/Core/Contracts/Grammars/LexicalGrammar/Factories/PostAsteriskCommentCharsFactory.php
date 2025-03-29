@@ -7,8 +7,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\MultiLineCommentChars;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\MultiLineNotForwardSlashOrAsteriskChar;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\PostAsteriskCommentChars;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface PostAsteriskCommentCharsFactory
 {
@@ -16,20 +16,20 @@ interface PostAsteriskCommentCharsFactory
         MultiLineNotForwardSlashOrAsteriskChar $multiLineNotForwardSlashOrAsteriskChar,
         MultiLineCommentChars $multiLineCommentChars,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): PostAsteriskCommentChars;
 
     public function createAsterisk(
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): PostAsteriskCommentChars;
 
     public function createWithAsteriskAndPostAsteriskCommentChars(
         PostAsteriskCommentChars $postAsteriskCommentChars,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): PostAsteriskCommentChars;
 }

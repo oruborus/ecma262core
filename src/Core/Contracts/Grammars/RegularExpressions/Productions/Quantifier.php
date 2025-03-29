@@ -9,8 +9,6 @@ use Oru\EcmaScript\Core\Contracts\Values\QuantifierEvaluationResult;
 
 interface Quantifier extends RegularExpressionNode
 {
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-quantifier
-     */
-    public function evaluate(Agent $agent): QuantifierEvaluationResult;
+    /** @see https://tc39.es/ecma262/#sec-compilequantifier */
+    public function compileQuantifier(Agent $agent): QuantifierEvaluationResult;
 }

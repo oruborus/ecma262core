@@ -6,10 +6,16 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\Alternative;
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\Disjunction;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface DisjunctionFactory
 {
-    public function createWithAlternative(Alternative $alternative): Disjunction;
-
-    public function createWithAlternativeAndDisjunction(Alternative $alternative, Disjunction $disjunction): Disjunction;
+    public function create(
+        Alternative $alternative,
+        Disjunction $disjunction,
+        SourceText $sourceText,
+        Position $position,
+        Position $next,
+    ): Disjunction;
 }

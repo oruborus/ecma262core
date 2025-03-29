@@ -8,6 +8,7 @@ enum FieldName: string
 {
     case DEBUG_BACKTRACE = '__BACKTRACE__';
     case DYNAMICALLY_CREATED_FUNCTION_OBJECT = '__DynamicallyCreatedFunctionObject__';
+    case PARSED_PATTERN = '__ParsedPattern__';
 
     case Environment        = '[[Environment]]';
     case FormalParameters   = '[[FormalParameters]]';
@@ -92,10 +93,17 @@ enum FieldName: string
     case ProxyTarget    = '[[ProxyTarget]]';
     case RevocableProxy = '[[RevocableProxy]]';
 
-    case RegExpMatcher  = '[[RegExpMatcher]]';
-    case OriginalFlags  = '[[OriginalFlags]]';
-    case OriginalSource = '[[OriginalSource]]';
-    case ParseResult    = '[[ParseResult]]';
+    case RegExpMatcher        = '[[RegExpMatcher]]';
+    case OriginalFlags        = '[[OriginalFlags]]';
+    case OriginalSource       = '[[OriginalSource]]';
+    case ParseResult          = '[[ParseResult]]';
+    case RegExpRecord         = '[[RegExpRecord]]';
+    case IgnoreCase           = '[[IgnoreCase]]';
+    case Multiline            = '[[Multiline]]';
+    case DotAll               = '[[DotAll]]';
+    case Unicode              = '[[Unicode]]';
+    case UnicodeSets          = '[[UnicodeSets]]';
+    case CapturingGroupsCount = '[[CapturingGroupsCount]]';
 
     case SetData = '[[SetData]]';
 

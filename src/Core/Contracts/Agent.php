@@ -8,6 +8,7 @@ use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ExecutionContext;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
@@ -68,7 +69,7 @@ interface Agent extends Container
 
     public function createErrorThrowCompletion(string $type = 'AggregateError', string $message = '', ?ObjectValue $errors = null): ThrowCompletion;
 
-    public function createSyntaxError(string $message, ?PositionalInformation $positionalInformation = null): ThrowCompletion;
+    public function createSyntaxError(string $message, ?Position $position = null): ThrowCompletion;
 
     public function getLittleEndian(): BooleanValue;
 

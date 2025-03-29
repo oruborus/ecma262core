@@ -17,25 +17,26 @@ use Oru\EcmaScript\Core\Contracts\Agent;
  */
 interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
 {
-    /**
-     * @param TValue $value
-     */
-    public function hasValue(mixed $value): bool;
+    /** @var TValue[] $values */
+    public array $values { get; }
+
+    /** @param TValue $value */
+    public function contains(mixed $value): bool;
 
     /**
      * Append all values of $list to $this and return a new list.
      * The keys of list are not preserved.
      *
      * @param ListValue<TKey, TValue> $list
-     * @return ListValue<TKey, TValue>
+     * @return static<TKey, TValue>
      */
-    public function append(ListValue $list): ListValue;
+    public function append(ListValue $list): static;
 
     /**
      * Shifts the first value of the list off and returns it, shortening the list by one element and moving everything down.
      * The keys of list are not modified.
      *
-     * @return TValue
+     * @return ?TValue
      */
     public function shift(): mixed;
 
@@ -43,15 +44,15 @@ interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
      * Pops the last value of the list off and returns it, shortening the list by one element.
      * The keys of list are not modified.
      *
-     * @return TValue
+     * @return ?TValue
      */
     public function pop(): mixed;
 
     /**
      * @param TValue $value
-     * @return ListValue<int, TValue>
+     * @return static<int, TValue>
      */
-    public function unshift(Agent $agent, mixed $value): ListValue;
+    public function unshift(Agent $agent, mixed $value): static;
 
     public function isUnique(): bool;
 }

@@ -8,8 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DecimalDig
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\LegacyOctalLikeDecimalIntegerLiteral;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\NonOctalDecimalIntegerLiteral;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\NonOctalDigit;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface NonOctalDecimalIntegerLiteralFactory
 {
@@ -17,22 +17,22 @@ interface NonOctalDecimalIntegerLiteralFactory
         NonOctalDecimalIntegerLiteral $nonOctalDecimalIntegerLiteral,
         DecimalDigit $decimalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): NonOctalDecimalIntegerLiteral;
 
     public function createWithNonOctalDigit(
         NonOctalDigit $nonOctalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): NonOctalDecimalIntegerLiteral;
 
     public function createWithLegacyOctalLikeDecimalIntegerLiteralAndNonOctalDigit(
         LegacyOctalLikeDecimalIntegerLiteral $legacyOctalLikeDecimalIntegerLiteral,
         NonOctalDigit $nonOctalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): NonOctalDecimalIntegerLiteral;
 }

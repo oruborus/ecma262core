@@ -11,9 +11,9 @@ use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 interface CodePointsToString
 {
     /**
-     * @see https://262.ecma-international.org/12.0/#sec-codepointstostring
+     * @see https://tc39.es/ecma262/#sec-codepointstostring
      *
-     * @param ListValue<int, int> $text
+     * @param ListValue<non-negative-int, int<0, 1114111>> $text
      */
     public function __invoke(Agent $agent, ListValue $text): StringValue;
 }

@@ -8,19 +8,25 @@ use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\ClassA
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\ClassAtomNoDash;
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\ClassContents;
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\NonemptyClassRangesNoDash;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface NonemptyClassRangesNoDashFactory
 {
-    public function createWithClassAtom(ClassAtom $classAtom): NonemptyClassRangesNoDash;
-
     public function createWithoutDash(
         ClassAtomNoDash $classAtomNoDash,
-        ?NonemptyClassRangesNoDash $nonemptyClassRangesNoDash,
+        NonemptyClassRangesNoDash $nonemptyClassRangesNoDash,
+        SourceText $sourceText,
+        Position $position,
+        Position $next,
     ): NonemptyClassRangesNoDash;
 
     public function createWithDash(
         ClassAtomNoDash $classAtomNoDash,
         ClassAtom $classAtom,
         ?ClassContents $classContents,
+        SourceText $sourceText,
+        Position $position,
+        Position $next,
     ): NonemptyClassRangesNoDash;
 }

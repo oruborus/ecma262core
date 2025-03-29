@@ -6,8 +6,9 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Lexers;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\RegExpUnicodeEscapeSequence;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface RegExpUnicodeEscapeSequenceLexer
@@ -17,5 +18,5 @@ interface RegExpUnicodeEscapeSequenceLexer
      *
      * @throws ThrowCompletion
      */
-    public function parse(Agent $agent, Lexer $lexer, Parameters $parameters): ?RegExpUnicodeEscapeSequence;
+    public function tokenize(Agent $agent, SourceText $sourceText, Position $position, Parameters $parameters): ?RegExpUnicodeEscapeSequence;
 }

@@ -9,32 +9,32 @@ use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\LegacyOcta
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\NonZeroOctalDigit;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\OctalDigit;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\ZeroToThree;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface LegacyOctalEscapeSequenceFactory
 {
     public function createNonZeroOctalDigit(
         NonZeroOctalDigit $nonZeroOctalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): LegacyOctalEscapeSequence;
 
     public function createZeroToThreeOctalDigit(
         ZeroToThree $zeroToThree,
         OctalDigit $octalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): LegacyOctalEscapeSequence;
 
     public function createFourToSevenOctalDigit(
         FourToSeven $fourToSeven,
         OctalDigit $octalDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): LegacyOctalEscapeSequence;
 
     public function createZeroToThreeOctalDigitOctalDigit(
@@ -42,13 +42,13 @@ interface LegacyOctalEscapeSequenceFactory
         OctalDigit $octalDigit1,
         OctalDigit $octalDigit2,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): LegacyOctalEscapeSequence;
 
     public function createZero(
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): LegacyOctalEscapeSequence;
 }

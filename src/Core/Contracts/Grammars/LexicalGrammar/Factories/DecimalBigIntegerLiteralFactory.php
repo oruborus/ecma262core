@@ -7,8 +7,8 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Factories;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DecimalBigIntegerLiteral;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\DecimalDigits;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\NonZeroDigit;
-use Oru\EcmaScript\Core\Contracts\PositionalInformation;
-use Oru\EcmaScript\Core\Contracts\SourceText;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 
 interface DecimalBigIntegerLiteralFactory
 {
@@ -16,20 +16,20 @@ interface DecimalBigIntegerLiteralFactory
         NonZeroDigit $nonZeroDigit,
         DecimalDigits $decimalDigits,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): DecimalBigIntegerLiteral;
 
     public function createWithoutDecimalDigits(
         NonZeroDigit $nonZeroDigit,
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): DecimalBigIntegerLiteral;
 
     public function createZero(
         SourceText $sourceText,
-        PositionalInformation $position,
-        PositionalInformation $next,
+        Position $position,
+        Position $next,
     ): DecimalBigIntegerLiteral;
 }

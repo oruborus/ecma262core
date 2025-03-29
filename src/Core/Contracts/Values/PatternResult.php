@@ -8,5 +8,6 @@ use Oru\EcmaScript\Core\Contracts\Agent;
 
 interface PatternResult extends Value
 {
-    public function __invoke(Agent $agent, StringValue $str, NumberValue $index): ?State;
+    /** @param ListValue<int, int> $input */
+    public function __invoke(Agent $agent, ListValue $input, NumberValue $index): MatchState|Failure;
 }

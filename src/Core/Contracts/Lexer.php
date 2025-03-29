@@ -7,6 +7,8 @@ namespace Oru\EcmaScript\Core\Contracts;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\InputElement;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\InputElementDiv;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\InputElementType;
+use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\RegularExpressionNode;
 use Oru\EcmaScript\Core\Contracts\Values\GoalSymbol;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
@@ -22,33 +24,33 @@ interface Lexer
     public function goalSymbol(): GoalSymbol;
 
     /**
-     * @template TInputElement of InputElement
-     * @param class-string<TInputElement> $goalSymbol
+     * @template TSymbol of InputElement|Node|RegularExpressionNode
+     * @param class-string<TSymbol> $goalSymbol
      * @param non-negative-int $offset
-     * @return ?TInputElement
+     * @return ?TSymbol
      */
-    public function peek(string $goalSymbol = InputElementDiv::class, int $offset = 0): ?InputElement;
+    public function peek(string $goalSymbol = InputElementDiv::class, int $offset = 0): null|InputElement|Node|RegularExpressionNode;
 
     /**
-     * @template TInputElement of InputElement
-     * @param class-string<TInputElement> $goalSymbol
-     * @return ?TInputElement
+     * @template TSymbol of InputElement|Node|RegularExpressionNode
+     * @param class-string<TSymbol> $goalSymbol
+     * @return ?TSymbol
      */
-    public function consume(string $goalSymbol = InputElementDiv::class): ?InputElement;
+    public function consume(string $goalSymbol = InputElementDiv::class): null|InputElement|Node|RegularExpressionNode;
 
     public function consumeLT(): void;
 
-    public function tryConsumeAfterLT(InputElementType ...$values): ?InputElement;
+    public function tryConsumeAfterLT(InputElementType ...$values): null|InputElement|Node|RegularExpressionNode;
 
-    public function consumeAfterLTOrFail(InputElementType ...$values): InputElement;
+    public function consumeAfterLTOrFail(InputElementType ...$values): InputElement|Node;
 
     /**
-     * @template TInputElement of InputElement
-     * @param class-string<TInputElement> $goalSymbol
+     * @template TSymbol of InputElement|Node|RegularExpressionNode
+     * @param class-string<TSymbol> $goalSymbol
      * @param non-negative-int $offset
-     * @return ?TInputElement
+     * @return ?TSymbol
      */
-    public function peekIgnoringLT(string $goalSymbol = InputElementDiv::class, int $offset = 0): ?InputElement;
+    public function peekIgnoringLT(string $goalSymbol = InputElementDiv::class, int $offset = 0): null|InputElement|Node|RegularExpressionNode;
 
     /**
      * @param non-negative-int $offset
@@ -64,7 +66,7 @@ interface Lexer
      */
     public function lookAhead(callable $fn): mixed;
 
-    public function positionalInformation(): PositionalInformation;
+    public function position(): Position;
 
     public function newLine(): void;
 

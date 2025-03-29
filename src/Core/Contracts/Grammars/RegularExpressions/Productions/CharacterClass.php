@@ -6,11 +6,10 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\PatternEvaluationResult;
+use Oru\EcmaScript\Core\Contracts\Values\RegExpRecord;
 
 interface CharacterClass extends Atom
 {
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-characterclass
-     */
-    public function evaluate(Agent $agent): PatternEvaluationResult;
+    /** @see https://tc39.es/ecma262/#sec-compilecharacterclass */
+    public function compileCharacterClass(Agent $agent, RegExpRecord $rer): PatternEvaluationResult;
 }
