@@ -11,12 +11,4 @@ interface HasPosition
     public Position $position { get; }
 
     public Position $next { get; }
-
-    public function position(): Position;
-
-    public function line(): int;
-
-    public function column(): int;
-
-    public function file(): string;
 }

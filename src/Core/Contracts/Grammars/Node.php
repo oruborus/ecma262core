@@ -13,6 +13,9 @@ use Oru\EcmaScript\Core\Contracts\Values\Value;
 // FIXME: Remove `Node` extend `HasSourceTextMatched` and (a future) `HasContains` directly
 interface Node extends HasSourceTextMatched
 {
+    /** @var Node[] $childNodes */
+    public array $childNodes { get; }
+
     public function evaluate(Agent $agent): Value;
 
     /**

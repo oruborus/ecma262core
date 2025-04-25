@@ -39,8 +39,6 @@ enum FieldName: string
     case BoundThis           = '[[BoundThis]]';
     case BoundArguments      = '[[BoundArguments]]';
 
-    case ImplementationSteps = '[[ImplementationSteps]]';
-
     case DateValue = '[[DateValue]]';
 
     case ErrorData = '[[ErrorData]]';

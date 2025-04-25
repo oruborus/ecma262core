@@ -18,5 +18,5 @@ interface BackReferenceMatcher
      *
      * @param ListValue<int, NumberValue> $ns
      */
-    public function __invoke(Agent $agent, RegExpRecord $rer, ListValue $n, Direction $direction): Matcher;
+    public function __invoke(Agent $agent, RegExpRecord $rer, ListValue $ns, Direction $direction): Matcher;
 }

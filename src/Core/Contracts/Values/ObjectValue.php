@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
+use Closure;
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 
@@ -102,7 +103,14 @@ interface ObjectValue extends LanguageValue
      */
     public function newTarget(): UndefinedValue|ObjectValue;
 
-    public function prepareBuiltinCallOrConstruct(Agent $agent, LanguageValue $thisArgument, UndefinedValue|ObjectValue $newTarget): void;
+    /**
+     * @param Closure(Agent, LanguageValue...):LanguageValue $behaviour
+     *
+     * @throws RuntimeException
+     */
+    public function setBehaviour(Closure $behaviour): void;
+
+    public function prepareBuiltinCallOrConstruct(LanguageValue $thisArgument, UndefinedValue|ObjectValue $newTarget): void;
 
     /**
      * @param ListValue<int, LanguageValue> $argumentsList

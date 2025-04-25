@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts;
 
-use Oru\EcmaScript\Core\Contracts\Grammars\Node;
-use Oru\EcmaScript\Core\Contracts\Values\Value;
+use Deprecated;
 use Oru\EcmaScript\Core\Contracts\Values\ValueFactory;
 
 interface Interpreter
 {
-    public function run(Node $node, Agent $agent): ?Value;
-
+    #[Deprecated('Inject `ValueFactory`')]
     public function getValueFactory(): ValueFactory;
 
     public function enterStrictMode(): void;
