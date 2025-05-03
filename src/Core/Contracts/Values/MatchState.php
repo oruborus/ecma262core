@@ -11,6 +11,6 @@ interface MatchState extends SpecificationValue
     /** @var (CaptureRange|UndefinedValue)[] $captures */
     public array $captures { get; set; }
 
-    /** @var ListValue<int, int> $input */
+    /** @var ListValue<int> $input */
     public ListValue $input { get; set; }
 }

@@ -10,10 +10,9 @@ use Iterator;
 use Oru\EcmaScript\Core\Contracts\Agent;
 
 /**
- * @template TKey
  * @template TValue
- * @template-extends ArrayAccess<TKey, TValue>
- * @template-extends Iterator<TKey, TValue>
+ * @template-extends ArrayAccess<non-negative-int, TValue>
+ * @template-extends Iterator<non-negative-int, TValue>
  */
 interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
 {
@@ -27,14 +26,13 @@ interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
      * Append all values of $list to $this and return a new list.
      * The keys of list are not preserved.
      *
-     * @param ListValue<TKey, TValue> $list
-     * @return static<TKey, TValue>
+     * @param ListValue<TValue> $list
+     * @return static<TValue>
      */
     public function append(ListValue $list): static;
 
     /**
      * Shifts the first value of the list off and returns it, shortening the list by one element and moving everything down.
-     * The keys of list are not modified.
      *
      * @return ?TValue
      */
@@ -42,7 +40,6 @@ interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
 
     /**
      * Pops the last value of the list off and returns it, shortening the list by one element.
-     * The keys of list are not modified.
      *
      * @return ?TValue
      */
@@ -50,7 +47,7 @@ interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
 
     /**
      * @param TValue $value
-     * @return static<int, TValue>
+     * @return static<TValue>
      */
     public function unshift(Agent $agent, mixed $value): static;
 

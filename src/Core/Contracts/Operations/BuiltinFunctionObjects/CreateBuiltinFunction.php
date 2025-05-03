@@ -19,7 +19,7 @@ interface CreateBuiltinFunction
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createbuiltinfunction
      *
-     * @param ListValue<int, FieldName> $internalSlotsList
+     * @param ListValue<FieldName> $internalSlotsList
      */
     public function __invoke(Agent $agent, Closure $steps, NumberValue $length, StringValue|SymbolValue $name, ListValue $internalSlotsList, ?RealmRecord $realm = null, ?ObjectValue $prototype = null, ?StringValue $prefix = null): ObjectValue;
 }

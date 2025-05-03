@@ -21,14 +21,14 @@ interface ModuleRecord extends SpecificationValue
     public function DFSAncestorIndex(null|NumberValue|EmptyValue $dfsAncestorIndex = null): NumberValue|EmptyValue;
 
     /**
-     * @param ?ListValue<int, StringValue> $requestedModules
-     * @return ListValue<int, StringValue>
+     * @param ?ListValue<StringValue> $requestedModules
+     * @return ListValue<StringValue>
      */
     public function requestedModules(?ListValue $requestedModules = null): ListValue;
 
     /**
-     * @param ?ListValue<int, SpecifierModulePair> $loadedModules
-     * @return ListValue<int, SpecifierModulePair>
+     * @param ?ListValue<SpecifierModulePair> $loadedModules
+     * @return ListValue<SpecifierModulePair>
      */
     public function loadedModules(?ListValue $loadedModules = null): ListValue;
 
@@ -41,8 +41,8 @@ interface ModuleRecord extends SpecificationValue
     public function topLevelCapability(null|PromiseCapabilityRecord|EmptyValue $topLevelCapability = null): PromiseCapabilityRecord|EmptyValue;
 
     /**
-     * @param ?ListValue<int, CyclicModuleRecord> $asyncParentModules
-     * @return ListValue<int, CyclicModuleRecord>
+     * @param ?ListValue<CyclicModuleRecord> $asyncParentModules
+     * @return ListValue<CyclicModuleRecord>
      */
     public function asyncParentModules(?ListValue $asyncParentModules = null): ListValue;
 
@@ -60,8 +60,8 @@ interface ModuleRecord extends SpecificationValue
      * 
      * @throws AbruptCompletion
      *
-     * @param ?ListValue<int, SourceTextModuleRecord> $exportStarSet
-     * @return ListValue<int, StringValue>
+     * @param ?ListValue<SourceTextModuleRecord> $exportStarSet
+     * @return ListValue<StringValue>
      */
     public function getExportedNames(Agent $agent, ?ListValue $exportStarSet = null): ListValue;
 
@@ -74,7 +74,7 @@ interface ModuleRecord extends SpecificationValue
      *
      * LoadRequestedModules must have completed successfully prior to invoking this method.
      *
-     * @param ?ListValue<int, ModuleExportNamePair> $resolveSet
+     * @param ?ListValue<ModuleExportNamePair> $resolveSet
      * @return ResolvedBinding|NullValue|EntryResult::AMBIGUOUS
      */
     public function resolveExport(Agent $agent, StringValue $exportName, ?ListValue $resolveSet = null): ResolvedBinding|NullValue|EntryResult;

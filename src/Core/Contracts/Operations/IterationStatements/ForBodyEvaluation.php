@@ -17,8 +17,8 @@ interface ForBodyEvaluation
     /**
      * @see https://262.ecma-international.org/12.0/#sec-forbodyevaluation
      *
-     * @param ListValue<int, StringValue> $perIterationBindings
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $perIterationBindings
+     * @param ListValue<StringValue> $labelSet
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ?Expression $test, ?Expression $increment, Statement $stmt, ListValue $perIterationBindings, ListValue $labelSet): LanguageValue;

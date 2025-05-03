@@ -15,7 +15,7 @@ interface ForStatement extends IterationStatement
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-forloopevaluation
      *
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $labelSet
      * @throws AbruptCompletion
      */
     public function forLoopEvaluation(Agent $agent, ListValue $labelSet): LanguageValue;

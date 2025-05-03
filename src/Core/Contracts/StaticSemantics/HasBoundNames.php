@@ -13,7 +13,7 @@ interface HasBoundNames
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-boundnames
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function boundNames(Agent $agent): ListValue;
 }

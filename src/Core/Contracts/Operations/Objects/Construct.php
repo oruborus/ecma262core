@@ -16,7 +16,7 @@ interface Construct
     /**
      * @see https://tc39.es/ecma262/#sec-construct
      *
-     * @param ?ListValue<int, LanguageValue> $argumentsList
+     * @param ?ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $f, ?ListValue $argumentsList = null, null|UndefinedValue|ObjectValue $newTarget = null): ObjectValue;

@@ -79,6 +79,8 @@ enum FieldName: string
     case Delete            = '[[Delete]]';
     case OwnPropertyKeys   = '[[OwnPropertyKeys]]';
 
+    case PrivateElements   = '[[PrivateElements]]';
+
     case Promise                 = '[[Promise]]';
     case PromiseState            = '[[PromiseState]]';
     case PromiseResult           = '[[PromiseResult]]';

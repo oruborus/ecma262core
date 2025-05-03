@@ -13,8 +13,8 @@ interface GraphLoadingState extends SpecificationValue
     public function pendingModulesCount(?NumberValue $pendingModulesCount = null): NumberValue;
 
     /**
-     * @param ListValue<int, CyclicModuleRecord> $visited
-     * @return ListValue<int, CyclicModuleRecord>
+     * @param ListValue<CyclicModuleRecord> $visited
+     * @return ListValue<CyclicModuleRecord>
      */
     public function visited(?ListValue $visited = null): ListValue;
 

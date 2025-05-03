@@ -13,7 +13,7 @@ interface IdentifierName extends PrivateIdentifier
     /**
      * @see https://tc39.es/ecma262/#sec-identifiercodepoints
      *
-     * @return ListValue<non-negative-int, int<0,1114111>>
+     * @return ListValue<int<0,1114111>>
      */
     public function identifierCodePoints(): ListValue;
 }

@@ -16,7 +16,7 @@ interface RawBytesToNumeric
     /**
      * @see https://262.ecma-international.org/12.0/#sec-getvaluefrombuffer
      *
-     * @param ListValue<int, int> $rawBytes
+     * @param ListValue<int> $rawBytes
      */
     public function __invoke(Agent $agent, TypedArrayType $type, ListValue $rawBytes, BooleanValue $isLittleEndian): NumberValue|BigIntValue;
 }

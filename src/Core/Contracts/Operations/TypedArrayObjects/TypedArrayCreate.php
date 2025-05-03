@@ -14,7 +14,7 @@ interface TypedArrayCreate
     /**
      * @see https://262.ecma-international.org/12.0/#typedarray-create
      *
-     * @param ListValue<int, LanguageValue> $argumentList
+     * @param ListValue<LanguageValue> $argumentList
      */
     public function __invoke(Agent $agent, ObjectValue $constructor, ListValue $argumentList): ObjectValue;
 }

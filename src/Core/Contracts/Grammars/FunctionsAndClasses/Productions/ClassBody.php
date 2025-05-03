@@ -13,7 +13,7 @@ interface ClassBody extends Node
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-nonconstructormethoddefinitions
      *
-     * @return ListValue<int, ClassElement>
+     * @return ListValue<ClassElement>
      */
     public function nonConstructorMethodDefinitions(Agent $agent): ListValue;
 

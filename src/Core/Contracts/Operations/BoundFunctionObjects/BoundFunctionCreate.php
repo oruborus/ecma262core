@@ -15,7 +15,7 @@ interface BoundFunctionCreate
     /**
      * @see https://tc39.es/ecma262/#sec-boundfunctioncreate
      *
-     * @param ListValue<int, LanguageValue> $boundArgs
+     * @param ListValue<LanguageValue> $boundArgs
      * 
      * @throws AbruptCompletion
      */

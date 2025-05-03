@@ -15,7 +15,7 @@ interface HostCallJobCallback
     /**
      * @see https://tc39.es/ecma262/#sec-hostcalljobcallback
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      *
      * @throws AbruptCompletion
      */

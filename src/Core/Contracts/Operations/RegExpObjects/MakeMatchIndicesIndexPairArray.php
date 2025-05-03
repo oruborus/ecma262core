@@ -17,8 +17,8 @@ interface MakeMatchIndicesIndexPairArray
     /**
      * @see https://tc39.es/ecma262/#sec-makematchindicesindexpairarray
      *
-     * @param ListValue<int, MatchRecord|UndefinedValue> $indices
-     * @param ListValue<int, StringValue|UndefinedValue> $groupNames
+     * @param ListValue<MatchRecord|UndefinedValue> $indices
+     * @param ListValue<StringValue|UndefinedValue> $groupNames
      */
     public function __invoke(Agent $agent, StringValue $s, ListValue $indices, ListValue $groupNames, BooleanValue $hasGroups): ObjectValue;
 }

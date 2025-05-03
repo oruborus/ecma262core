@@ -18,7 +18,7 @@ interface ModuleNamespaceCreate
      * @see https://tc39.es/ecma262/#sec-module-namespace-exotic-objects
      * @see https://tc39.es/ecma262/#sec-module-namespace-objects
      * 
-     * @param ListValue<int, StringValue> $exports
+     * @param ListValue<StringValue> $exports
      */
     public function __invoke(Agent $agent, CyclicModuleRecord $module, ListValue $exports): ObjectValue;
 }

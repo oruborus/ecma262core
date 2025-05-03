@@ -30,12 +30,12 @@ interface RealmRecord extends SpecificationValue
     public function getGlobalEnvironment(): GlobalEnvironmentRecord;
 
     /**
-     * @param ListValue<int, array{"[[Site]]": Node, "[[Array]]": ObjectValue}> $templateMap
+     * @param ListValue<array{"[[Site]]": Node, "[[Array]]": ObjectValue}> $templateMap
      */
     public function setTemplateMap(ListValue $templateMap): void;
 
     /**
-     * @return ListValue<int, array{"[[Site]]": Node, "[[Array]]": ObjectValue}>
+     * @return ListValue<array{"[[Site]]": Node, "[[Array]]": ObjectValue}>
      */
     public function getTemplateMap(): ListValue;
 

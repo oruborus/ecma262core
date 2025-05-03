@@ -15,7 +15,7 @@ interface InitializeTypedArrayFromList
     /**
      * @see https://262.ecma-international.org/12.0/#sec-initializetypedarrayfromlist
      *
-     * @param ListValue<int, LanguageValue> $values
+     * @param ListValue<LanguageValue> $values
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $o, ListValue $values): null;

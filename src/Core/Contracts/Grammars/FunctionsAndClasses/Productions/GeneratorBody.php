@@ -15,7 +15,7 @@ interface GeneratorBody extends FunctionBody
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-evaluategeneratorbody
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      */
     public function evaluateGeneratorBody(Agent $agent, ObjectValue $functionObject, ListValue $argumentsList): AbruptCompletion;
 }

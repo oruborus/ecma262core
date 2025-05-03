@@ -15,7 +15,7 @@ interface CreateArrayFromList
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createarrayfromlist
      *
-     * @param ListValue<int, LanguageValue> $elements
+     * @param ListValue<LanguageValue> $elements
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ListValue $elements): ObjectValue;

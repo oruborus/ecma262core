@@ -22,7 +22,7 @@ interface ConciseBody extends FunctionStatementList
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-evaluatebody
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function evaluateBody(Agent $agent, ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
@@ -35,28 +35,28 @@ interface ConciseBody extends FunctionStatementList
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallydeclarednames
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function lexicallyDeclaredNames(Agent $agent): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallyscopeddeclarations
      *
-     * @return ListValue<int, Declaration>
+     * @return ListValue<Declaration>
      */
     public function lexicallyScopedDeclarations(Agent $agent): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-vardeclarednames
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function varDeclaredNames(Agent $agent): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-varscopeddeclarations
      *
-     * @return ListValue<int, Declaration>
+     * @return ListValue<Declaration>
      */
     public function varScopedDeclarations(Agent $agent): ListValue;
 }

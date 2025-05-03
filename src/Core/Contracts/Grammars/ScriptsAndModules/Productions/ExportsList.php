@@ -16,21 +16,21 @@ interface ExportsList extends Node
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportedbindings
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function exportedBindings(Agent $agent): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportednames
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function exportedNames(Agent $agent): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportentriesformodule
      *
-     * @return ListValue<int, ExportEntry>
+     * @return ListValue<ExportEntry>
      */
     public function exportEntriesForModule(Agent $agent, StringValue|NullValue $module): ListValue;
 }

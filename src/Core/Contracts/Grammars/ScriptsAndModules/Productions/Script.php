@@ -27,28 +27,28 @@ interface Script extends Node
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallydeclarednames
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function lexicallyDeclaredNames(Agent $agent): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallyscopeddeclarations
      *
-     * @return ListValue<int, Declaration>
+     * @return ListValue<Declaration>
      */
     public function lexicallyScopedDeclarations(Agent $agent): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-vardeclarednames
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function varDeclaredNames(Agent $agent): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-varscopeddeclarations
      *
-     * @return ListValue<int, Declaration>
+     * @return ListValue<Declaration>
      */
     public function varScopedDeclarations(Agent $agent): ListValue;
 }

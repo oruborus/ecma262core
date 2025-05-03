@@ -15,7 +15,7 @@ interface IterationStatement extends BreakableStatement
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-loopevaluation
      *
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $labelSet
      * @throws AbruptCompletion
      */
     public function loopEvaluation(Agent $agent, ListValue $labelSet): LanguageValue;

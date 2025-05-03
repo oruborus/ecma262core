@@ -19,7 +19,7 @@ interface BindingRestProperty extends HasBoundNames, Binding
     /**
      * @see https://262.ecma-international.org/12.0/#sec-destructuring-binding-patterns-runtime-semantics-restbindinginitialization
      *
-     * @param ListValue<int, StringValue|SymbolValue> $excludedNames
+     * @param ListValue<StringValue|SymbolValue> $excludedNames
      * @throws AbruptCompletion
      */
     public function restBindingInitialization(Agent $agent, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment, ListValue $excludedNames): LanguageValue;

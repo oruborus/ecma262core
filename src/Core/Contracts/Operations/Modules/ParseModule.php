@@ -15,8 +15,8 @@ interface ParseModule
     /**
      * @see https://tc39.es/ecma262/#sec-parse-module
      *
-     * @param ListValue<int, int> $sourceText
-     * @return SourceTextModuleRecord|ListValue<int, ObjectValue>
+     * @param ListValue<int> $sourceText
+     * @return SourceTextModuleRecord|ListValue<ObjectValue>
      */
     public function __invoke(Agent $agent, ListValue $sourceText, RealmRecord $realm, mixed $hostDefined): SourceTextModuleRecord|ListValue;
 }

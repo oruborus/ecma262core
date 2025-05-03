@@ -15,7 +15,7 @@ interface OrdinaryCallEvaluateBody
     /**
      * @see https://tc39.es/ecma262/#sec-ordinarycallevaluatebody
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $f, ListValue $argumentsList): LanguageValue;

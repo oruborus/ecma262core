@@ -13,7 +13,7 @@ interface NamedExports extends ExportFromClause
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportedbindings
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function exportedBindings(Agent $agent): ListValue;
 }

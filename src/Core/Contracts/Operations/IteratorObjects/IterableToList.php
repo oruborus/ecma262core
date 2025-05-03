@@ -15,7 +15,7 @@ interface IterableToList
     /**
      * @see https://262.ecma-international.org/12.0/#sec-iterabletolist
      *
-     * @return ListValue<int, LanguageValue>
+     * @return ListValue<LanguageValue>
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, LanguageValue $items, ?ObjectValue $method = null): ListValue;

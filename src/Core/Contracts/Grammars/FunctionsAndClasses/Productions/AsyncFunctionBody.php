@@ -15,7 +15,7 @@ interface AsyncFunctionBody extends FunctionBody
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-evaluateasyncfunctionbody
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      *
      * @throws AbruptCompletion
      */

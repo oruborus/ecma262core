@@ -26,12 +26,12 @@ interface GlobalEnvironmentRecord extends EnvironmentRecord
     public function getDeclarativeRecord(): DeclarativeEnvironmentRecord;
 
     /**
-     * @param ListValue<int, StringValue> $value
+     * @param ListValue<StringValue> $value
      */
     public function setVarNames(ListValue $value): void;
 
     /**
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function getVarNames(Agent $agent): ListValue;
 

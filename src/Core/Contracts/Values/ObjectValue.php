@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
 use Closure;
+use Generator;
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 
@@ -23,10 +24,8 @@ interface ObjectValue extends LanguageValue
 
     public function deletePropertyDescriptor(Agent $agent, StringValue|SymbolValue $propertyKey): void;
 
-    /**
-     * @return ListValue<StringValue|SymbolValue, PropertyDescriptor>
-     */
-    public function getAllPropertyDescriptors(): ListValue;
+    /** @return Generator<StringValue|SymbolValue, PropertyDescriptor> */
+    public function getAllPropertyDescriptors(): Generator;
 
     /**
      * @throws AbruptCompletion
@@ -76,19 +75,19 @@ interface ObjectValue extends LanguageValue
     public function delete(Agent $agent, StringValue|SymbolValue $p): BooleanValue;
 
     /**
-     * @return ListValue<int, StringValue|SymbolValue>
+     * @return ListValue<StringValue|SymbolValue>
      * @throws AbruptCompletion
      */
     public function ownPropertyKeys(Agent $agent): ListValue;
 
     /**
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function call(Agent $agent, LanguageValue $thisArgument, ListValue $argumentsList): LanguageValue;
 
     /**
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function construct(Agent $agent, ListValue $argumentsList, UndefinedValue|ObjectValue $newTarget): LanguageValue;
@@ -113,13 +112,13 @@ interface ObjectValue extends LanguageValue
     public function prepareBuiltinCallOrConstruct(LanguageValue $thisArgument, UndefinedValue|ObjectValue $newTarget): void;
 
     /**
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function builtinCall(Agent $agent, ListValue $argumentsList, LanguageValue $thisArgument): LanguageValue;
 
     /**
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function builtinConstruct(Agent $agent, ListValue $argumentsList, UndefinedValue|ObjectValue $newTarget): LanguageValue;

@@ -15,7 +15,7 @@ interface EnumerableOwnPropertyNames
     /**
      * @see https://262.ecma-international.org/12.0/#sec-enumerableownpropertynames
      *
-     * @return ListValue<int, LanguageValue>
+     * @return ListValue<LanguageValue>
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $o, string $kind): ListValue;

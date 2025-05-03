@@ -15,7 +15,7 @@ interface OrdinaryObjectCreate
     /**
      * @see https://262.ecma-international.org/12.0/#sec-ordinaryobjectcreate
      *
-     * @param ListValue<int, FieldName> $additionalInternalSlotsList
+     * @param ListValue<FieldName> $additionalInternalSlotsList
      */
     public function __invoke(Agent $agent, ObjectValue|NullValue $prototype, ?ListValue $additionalInternalSlotsList = null): ObjectValue;
 }

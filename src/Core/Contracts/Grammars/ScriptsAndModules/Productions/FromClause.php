@@ -14,7 +14,7 @@ interface FromClause extends Node
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-modulerequests
      *
-     * @return ListValue<int, StringValue>
+     * @return ListValue<StringValue>
      */
     public function moduleRequests(Agent $agent): ListValue;
 }

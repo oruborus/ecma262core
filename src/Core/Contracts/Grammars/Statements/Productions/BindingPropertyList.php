@@ -20,7 +20,7 @@ interface BindingPropertyList extends HasBoundNames, HasContainsExpression, Bind
     /**
      * @see https://262.ecma-international.org/12.0/#sec-destructuring-binding-patterns-runtime-semantics-propertybindinginitialization
      *
-     * @return ListValue<int, StringValue|SymbolValue>
+     * @return ListValue<StringValue|SymbolValue>
      * @throws AbruptCompletion
      */
     public function propertyBindingInitialization(Agent $agent, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): ListValue;

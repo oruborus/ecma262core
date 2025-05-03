@@ -15,7 +15,7 @@ interface HasLabelledEvaluation
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-labelledevaluation
      *
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $labelSet
      * @throws AbruptCompletion
      */
     public function labelledEvaluation(Agent $agent, ListValue $labelSet): LanguageValue;

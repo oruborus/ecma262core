@@ -56,7 +56,7 @@ interface ValueFactory
     public function createFunctionEnvironmentRecord(ObjectValue $functionObject, ObjectValue|UndefinedValue $newTarget, NullValue|EnvironmentRecord $outerEnv, string $thisBindingStatus): FunctionEnvironmentRecord;
 
     /**
-     * @param ListValue<int, StringValue> $varNames
+     * @param ListValue<StringValue> $varNames
      */
     public function createGlobalEnvironmentRecord(ObjectEnvironmentRecord $objectRecord, ObjectValue $globalThisValue, DeclarativeEnvironmentRecord $declarativeRecord, NullValue|EnvironmentRecord $outerEnv, ListValue $varNames): GlobalEnvironmentRecord;
 
@@ -68,7 +68,7 @@ interface ValueFactory
     public function createGoalSymbol(string $node, ParameterName ...$parameterNames): GoalSymbol;
 
     /**
-     * @param ListValue<int, CyclicModuleRecord> $visited
+     * @param ListValue<CyclicModuleRecord> $visited
      */
     public function createGraphLoadingState(PromiseCapabilityRecord $promiseCapability, BooleanValue $isLoading, NumberValue $pendingModulesCount, ListValue $visited, mixed $hostDefined = null): GraphLoadingState;
 
@@ -77,17 +77,16 @@ interface ValueFactory
     public function createJobCallback(ObjectValue $callback, mixed $hostDefined): JobCallback;
 
     /**
-     * @template TKey
      * @template TValue
-     * @param array<TKey, TValue> $value
-     * @return ListValue<TKey, TValue>
+     * @param TValue[] $value
+     * @return ListValue<TValue>
      */
     public function createList(array $value = []): ListValue;
 
     public function createMatchRecord(NumberValue $startIndex, NumberValue $endIndex): MatchRecord;
 
     /**
-     * @param ListValue<int, int> $input
+     * @param ListValue<int> $input
      * @param (CaptureRange|UndefinedValue)[] $captures
      */
     public function createMatchState(ListValue $input, NumberValue $endIndex, array $captures): MatchState;
@@ -106,10 +105,7 @@ interface ValueFactory
 
     public function createNumber(int|float $value): NumberValue;
 
-    /**
-     * @param ListValue<int, FieldName> $internalSlotsList
-     */
-    public function createObject(ListValue $internalSlotsList): ObjectValue;
+    public function createObject(): ObjectValue;
 
     public function createObjectEnvironmentRecord(
         ObjectValue $bindingObject,
@@ -166,13 +162,13 @@ interface ValueFactory
     public function createScriptRecord(): ScriptRecord;
 
     /**
-     * @param ListValue<int, StringValue> $requestedModules
-     * @param ListValue<int, SpecifierModulePair> $loadedModules
-     * @param ListValue<int, CyclicModuleRecord> $asyncParentModules
-     * @param ListValue<int, ImportEntry> $importEntries
-     * @param ListValue<int, ExportEntry> $localExportEntries
-     * @param ListValue<int, ExportEntry> $indirectExportEntries
-     * @param ListValue<int, ExportEntry> $starExportEntries
+     * @param ListValue<StringValue> $requestedModules
+     * @param ListValue<SpecifierModulePair> $loadedModules
+     * @param ListValue<CyclicModuleRecord> $asyncParentModules
+     * @param ListValue<ImportEntry> $importEntries
+     * @param ListValue<ExportEntry> $localExportEntries
+     * @param ListValue<ExportEntry> $indirectExportEntries
+     * @param ListValue<ExportEntry> $starExportEntries
      */
     public function createSourceTextModuleRecord(
         RealmRecord $realm,

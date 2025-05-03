@@ -15,7 +15,7 @@ interface ArgumentList extends Node
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-argumentlistevaluation
      *
-     * @return ListValue<int, LanguageValue>
+     * @return ListValue<LanguageValue>
      * @throws AbruptCompletion
      */
     public function argumentListEvaluation(Agent $agent): ListValue;

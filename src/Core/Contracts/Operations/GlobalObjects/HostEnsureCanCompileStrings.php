@@ -17,7 +17,7 @@ interface HostEnsureCanCompileStrings
     /**
      * @see https://tc39.es/ecma262/#sec-hostensurecancompilestrings
      *
-     * @param ListValue<int, StringValue> $parameterStrings
+     * @param ListValue<StringValue> $parameterStrings
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, RealmRecord $calleeRealm, ListValue $parameterStrings, StringValue $bodyString, BooleanValue $direct): UnusedValue;

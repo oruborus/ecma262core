@@ -16,7 +16,7 @@ interface ForInOfHeadEvaluation
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-forinofheadevaluation
      *
-     * @param ListValue<int, StringValue> $uninitializedBoundNames
+     * @param ListValue<StringValue> $uninitializedBoundNames
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ListValue $uninitializedBoundNames, Expression $expr, string $iterationKind): IteratorRecord;

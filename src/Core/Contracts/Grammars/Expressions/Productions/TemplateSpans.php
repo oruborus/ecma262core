@@ -25,7 +25,7 @@ interface TemplateSpans extends Node
     /**
      * @see https://tc39.es/ecma262/#sec-runtime-semantics-substitutionevaluation
      *
-     * @return ListValue<int, LanguageValue>
+     * @return ListValue<LanguageValue>
      *
      * @throws AbruptCompletion
      */
@@ -34,7 +34,7 @@ interface TemplateSpans extends Node
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-templatestrings
      *
-     * @return ListValue<int, StringValue|UndefinedValue>
+     * @return ListValue<StringValue|UndefinedValue>
      */
     public function templateStrings(Agent $agent, BooleanValue $raw): ListValue;
 }

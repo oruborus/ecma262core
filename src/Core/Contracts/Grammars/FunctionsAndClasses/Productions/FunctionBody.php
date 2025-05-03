@@ -15,7 +15,7 @@ interface FunctionBody extends ConciseBody
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-evaluatefunctionbody
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function evaluateFunctionBody(Agent $agent, ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;

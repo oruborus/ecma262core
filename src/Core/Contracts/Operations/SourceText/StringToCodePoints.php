@@ -13,7 +13,7 @@ interface StringToCodePoints
     /**
      * @see https://262.ecma-international.org/12.0/#sec-stringtocodepoints
      *
-     * @return ListValue<int, int>
+     * @return ListValue<int>
      */
     public function __invoke(Agent $agent, StringValue $string): ListValue;
 }

@@ -14,8 +14,8 @@ interface ImportedLocalNames
     /**
      * @see https://tc39.es/ecma262/#sec-importedlocalnames
      *
-     * @param ListValue<int, ImportEntry> $importEntries
-     * @return ListValue<int, StringValue>
+     * @param ListValue<ImportEntry> $importEntries
+     * @return ListValue<StringValue>
      */
     public function __invoke(Agent $agent, ListValue $importEntries): ListValue;
 }

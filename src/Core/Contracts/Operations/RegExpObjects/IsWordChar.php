@@ -14,7 +14,7 @@ interface IsWordChar
     /**
      * @see https://tc39.es/ecma262/#sec-runtime-semantics-iswordchar-abstract-operation
      *
-     * @param ListValue<int, int> $input
+     * @param ListValue<int> $input
      */
     public function __invoke(Agent $agent, RegExpRecord $rer, ListValue $input, int $e): BooleanValue;
 }

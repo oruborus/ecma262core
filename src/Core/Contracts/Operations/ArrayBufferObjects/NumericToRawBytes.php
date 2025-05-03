@@ -16,7 +16,7 @@ interface NumericToRawBytes
     /**
      * @see https://262.ecma-international.org/12.0/#sec-numerictorawbytes
      *
-     * @return ListValue<int, int>
+     * @return ListValue<int>
      */
     public function __invoke(Agent $agent, TypedArrayType $type, BigIntValue|NumberValue $value, BooleanValue $isLittleEndian): ListValue;
 }

@@ -17,7 +17,7 @@ interface CreateDynamicFunction
     /**
      * @see https://tc39.es/ecma262/#sec-createdynamicfunction
      *
-     * @param ListValue<int, LanguageValue> $parameterArgs
+     * @param ListValue<LanguageValue> $parameterArgs
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $constructor, UndefinedValue|ObjectValue $newTarget, DynamicFunctionKind $kind, ListValue $parameterArgs, LanguageValue $bodyArg): ObjectValue;

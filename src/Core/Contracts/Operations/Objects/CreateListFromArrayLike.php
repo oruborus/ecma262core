@@ -15,8 +15,8 @@ interface CreateListFromArrayLike
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createlistfromarraylike
      *
-     * @param ?ListValue<int, StringValue> $elementTypes
-     * @return ListValue<int, LanguageValue>
+     * @param ?ListValue<StringValue> $elementTypes
+     * @return ListValue<LanguageValue>
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, LanguageValue $obj, ?ListValue $elementTypes = null): ListValue;

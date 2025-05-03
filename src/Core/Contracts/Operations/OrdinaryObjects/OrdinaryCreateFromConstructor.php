@@ -16,7 +16,7 @@ interface OrdinaryCreateFromConstructor
     /**
      * @see https://262.ecma-international.org/12.0/#sec-ordinarycreatefromconstructor
      *
-     * @param ?ListValue<int, FieldName> $internalSlotsList
+     * @param ?ListValue<FieldName> $internalSlotsList
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $constructor, StringValue $intrinsicDefaultProto, ?ListValue $internalSlotsList = null): ObjectValue;

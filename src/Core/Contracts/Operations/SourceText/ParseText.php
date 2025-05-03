@@ -17,9 +17,9 @@ interface ParseText
      * @see https://tc39.es/ecma262/#sec-parsetext
      *
      * @template TNode of Node
-     * @param StringValue|ListValue<int, int> $sourceText
+     * @param StringValue|ListValue<int> $sourceText
      * @param GoalSymbol<TNode> $goalSymbol
-     * @return TNode|ListValue<int, ObjectValue>
+     * @return TNode|ListValue<ObjectValue>
      */
     public function __invoke(Agent $agent, StringValue|ListValue $sourceText, GoalSymbol $goalSymbol): Node|ListValue;
 }

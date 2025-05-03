@@ -14,7 +14,7 @@ interface CreateListIteratorRecord
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createlistiteratorRecord
      *
-     * @param ListValue<int, LanguageValue> $list
+     * @param ListValue<LanguageValue> $list
      */
     public function __invoke(Agent $agent, ListValue $list): IteratorRecord;
 }

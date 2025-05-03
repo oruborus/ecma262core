@@ -16,7 +16,7 @@ interface CreateMappedArgumentsObject
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createmappedargumentsobject
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      */
     public function __invoke(Agent $agent, ObjectValue $func, UniqueFormalParameters $formals, ListValue $argumentsList, EnvironmentRecord $env): ObjectValue;
 }

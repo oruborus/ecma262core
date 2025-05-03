@@ -15,7 +15,7 @@ interface FunctionDeclarationInstantiation
     /**
      * @see https://262.ecma-international.org/12.0/#sec-functiondeclarationinstantiation
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $func, ListValue $argumentsList): ?AbruptCompletion;

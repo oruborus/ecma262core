@@ -21,7 +21,7 @@ interface VariableDeclarationList extends Declaration
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-varscopeddeclarations
      *
-     * @return ListValue<int, Declaration>
+     * @return ListValue<Declaration>
      */
     public function varScopedDeclarations(Agent $agent): ListValue;
 }

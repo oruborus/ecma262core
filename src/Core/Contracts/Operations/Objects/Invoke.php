@@ -16,7 +16,7 @@ interface Invoke
     /**
      * @see https://262.ecma-international.org/12.0/#sec-invoke
      *
-     * @param ?ListValue<int, LanguageValue> $argumentsList
+     * @param ?ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, LanguageValue $v, StringValue|SymbolValue $p, ?ListValue $argumentsList = null): LanguageValue;

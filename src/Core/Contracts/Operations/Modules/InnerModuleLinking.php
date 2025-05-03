@@ -16,7 +16,7 @@ interface InnerModuleLinking
     /**
      * @see https://tc39.es/ecma262/#sec-InnerModuleLinking
      *
-     * @param ListValue<int, CyclicModuleRecord> $stack
+     * @param ListValue<CyclicModuleRecord> $stack
      * 
      * @throws AbruptCompletion
      */

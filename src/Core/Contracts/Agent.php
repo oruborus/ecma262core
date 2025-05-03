@@ -60,10 +60,8 @@ interface Agent extends Container
 
     public function getInterpreter(): Interpreter;
 
-    /**
-     * @return ListValue<string, SymbolValue>
-     */
-    public function getGlobalSymbolRegistry(): ListValue;
+    /** @var ListValue<array{key: StringValue, symbol: SymbolValue}> $globalSymbolRegistry */
+    public ListValue $globalSymbolRegistry { get; }
 
     public function createError(string $type = 'AggregateError', string $message = '', ?ObjectValue $errors = null): ObjectValue;
 

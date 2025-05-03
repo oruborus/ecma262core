@@ -14,22 +14,22 @@ interface ModuleItemList extends ModuleBody
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsduplicatelabels
      *
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $labelSet
      */
     public function containsDuplicateLabels(Agent $agent, ListValue $labelSet): BooleanValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsundefinedbreaktarget
      *
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $labelSet
      */
     public function containsUndefinedBreakTarget(Agent $agent, ListValue $labelSet): BooleanValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsundefinedcontinuetarget
      *
-     * @param ListValue<int, StringValue> $iterationSet
-     * @param ListValue<int, StringValue> $labelSet
+     * @param ListValue<StringValue> $iterationSet
+     * @param ListValue<StringValue> $labelSet
      */
     public function containsUndefinedContinueTarget(Agent $agent, ListValue $iterationSet, ListValue $labelSet): BooleanValue;
 }

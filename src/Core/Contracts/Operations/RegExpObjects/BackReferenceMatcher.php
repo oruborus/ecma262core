@@ -16,7 +16,7 @@ interface BackReferenceMatcher
     /**
      * @see https://tc39.es/ecma262/#sec-backreference-matcher
      *
-     * @param ListValue<int, NumberValue> $ns
+     * @param ListValue<NumberValue> $ns
      */
     public function __invoke(Agent $agent, RegExpRecord $rer, ListValue $ns, Direction $direction): Matcher;
 }

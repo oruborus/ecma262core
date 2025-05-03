@@ -18,11 +18,11 @@ interface SerializeJSONProperty
      * @see https://262.ecma-international.org/12.0/#sec-serializejsonproperty
      *
      * @param array{
-     *     Stack: ListValue<int, LanguageValue>, 
+     *     Stack: ListValue<LanguageValue>, 
      *     Indent: StringValue, 
      *     Gap: StringValue, 
      *     ReplacerFunction: UndefinedValue|ObjectValue, 
-     *     PropertyList: UndefinedValue|ListValue<int, LanguageValue>
+     *     PropertyList: UndefinedValue|ListValue<LanguageValue>
      * } $state
      * @throws AbruptCompletion
      */

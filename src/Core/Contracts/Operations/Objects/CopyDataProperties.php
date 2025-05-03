@@ -18,7 +18,7 @@ interface CopyDataProperties
     /**
      * @see https://tc39.es/ecma262/#sec-copydataproperties
      *
-     * @param ListValue<int, StringValue|SymbolValue> $excludedItems
+     * @param ListValue<StringValue|SymbolValue> $excludedItems
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ObjectValue $target, LanguageValue $source, ListValue $excludedItems): UnusedValue;

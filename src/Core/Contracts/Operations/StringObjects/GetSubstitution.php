@@ -18,7 +18,7 @@ interface GetSubstitution
      * @see https://262.ecma-international.org/12.0/#sec-getsubstitution
      * @see https://262.ecma-international.org/12.0/#table-replacement-text-symbol-substitutions
      *
-     * @param ListValue<int, StringValue> $captures
+     * @param ListValue<StringValue> $captures
      *
      * @throws AbruptCompletion
      */

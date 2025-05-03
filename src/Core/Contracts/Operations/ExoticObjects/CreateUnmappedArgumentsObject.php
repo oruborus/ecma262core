@@ -15,7 +15,7 @@ interface CreateUnmappedArgumentsObject
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createunmappedargumentsobject
      *
-     * @param ListValue<int, LanguageValue> $argumentsList
+     * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ListValue $argumentsList): ObjectValue;

@@ -15,7 +15,7 @@ interface CreatePerIterationEnvironment
     /**
      * @see https://262.ecma-international.org/12.0/#sec-createperiterationenvironment
      *
-     * @param ListValue<int, StringValue> $perIterationBindings
+     * @param ListValue<StringValue> $perIterationBindings
      * @throws AbruptCompletion
      */
     public function __invoke(Agent $agent, ListValue $perIterationBindings): UndefinedValue;

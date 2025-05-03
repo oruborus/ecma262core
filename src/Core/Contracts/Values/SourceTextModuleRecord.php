@@ -18,26 +18,26 @@ interface SourceTextModuleRecord extends CyclicModuleRecord
     public function importMeta(null|ObjectValue|EmptyValue $importMeta = null): ObjectValue|EmptyValue;
 
     /**
-     * @param ?ListValue<int, ImportEntry> $importEntries
-     * @return ListValue<int, ImportEntry>
+     * @param ?ListValue<ImportEntry> $importEntries
+     * @return ListValue<ImportEntry>
      */
     public function importEntries(?ListValue $importEntries = null): ListValue;
 
     /**
-     * @param ?ListValue<int, ExportEntry> $localExportEntries
-     * @return ListValue<int, ExportEntry>
+     * @param ?ListValue<ExportEntry> $localExportEntries
+     * @return ListValue<ExportEntry>
      */
     public function localExportEntries(?ListValue $localExportEntries = null): ListValue;
 
     /**
-     * @param ?ListValue<int, ExportEntry> $indirectExportEntries
-     * @return ListValue<int, ExportEntry>
+     * @param ?ListValue<ExportEntry> $indirectExportEntries
+     * @return ListValue<ExportEntry>
      */
     public function indirectExportEntries(?ListValue $indirectExportEntries = null): ListValue;
 
     /**
-     * @param ?ListValue<int, ExportEntry> $starExportEntries
-     * @return ListValue<int, ExportEntry>
+     * @param ?ListValue<ExportEntry> $starExportEntries
+     * @return ListValue<ExportEntry>
      */
     public function starExportEntries(?ListValue $starExportEntries = null): ListValue;
 }

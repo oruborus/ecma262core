@@ -15,7 +15,7 @@ interface OrdinaryOwnPropertyKeys
     /**
      * @see https://262.ecma-international.org/12.0/#sec-ordinaryownpropertykeys
      *
-     * @return ListValue<int, StringValue|SymbolValue>
+     * @return ListValue<StringValue|SymbolValue>
      */
     public function __invoke(Agent $agent, ObjectValue $object): ListValue;
 }
