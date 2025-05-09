@@ -6,12 +6,13 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\ExportEntry;
 use Oru\EcmaScript\Core\Contracts\Values\ImportEntry;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
-interface Module extends Node
+interface Module extends Node, HasContains
 {
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallydeclarednames

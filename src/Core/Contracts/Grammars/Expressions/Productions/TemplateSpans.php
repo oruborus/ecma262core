@@ -6,6 +6,7 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -13,7 +14,7 @@ use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 use Oru\EcmaScript\Core\Contracts\Values\UndefinedValue;
 
-interface TemplateSpans extends Node
+interface TemplateSpans extends Node, HasContains
 {
     /**
      * @see https://262.ecma-international.org/12.0/#sec-template-literals-runtime-semantics-evaluation

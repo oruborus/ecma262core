@@ -7,11 +7,12 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\RuntimeSemantics\HasLabelledEvaluation;
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
-interface LabelledItem extends Node, HasLabelledEvaluation
+interface LabelledItem extends Node, HasContains, HasLabelledEvaluation
 {
     public function statement(): Statement;
 

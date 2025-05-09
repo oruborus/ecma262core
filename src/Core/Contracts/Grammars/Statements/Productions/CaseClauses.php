@@ -6,11 +6,12 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
-interface CaseClauses extends Node
+interface CaseClauses extends Node, HasContains
 {
     /**
      * @return ListValue<CaseClause>

@@ -6,13 +6,14 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
 use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
-interface Block extends Node
+interface Block extends Node, HasContains
 {
     /**
      * @see https://262.ecma-international.org/12.0/#sec-block-runtime-semantics-evaluation
