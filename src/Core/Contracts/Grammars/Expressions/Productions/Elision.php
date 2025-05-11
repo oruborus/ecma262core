@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -20,12 +19,12 @@ interface Elision extends Node, HasContains
      *
      * @throws AbruptCompletion
      */
-    public function arrayAccumulation(Agent $agent, ObjectValue $array, NumberValue $nextIndex): NumberValue;
+    public function arrayAccumulation(ObjectValue $array, NumberValue $nextIndex): NumberValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-iteratordestructuringassignmentevaluation
      *
      * @throws AbruptCompletion
      */
-    public function iteratorDestructuringAssignmentEvaluation(Agent $agent, IteratorRecord $iteratorRecord): LanguageValue;
+    public function iteratorDestructuringAssignmentEvaluation(IteratorRecord $iteratorRecord): LanguageValue;
 }

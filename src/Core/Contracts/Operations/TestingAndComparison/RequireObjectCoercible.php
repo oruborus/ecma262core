@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\TestingAndComparison;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BigIntValue;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
@@ -22,5 +21,5 @@ interface RequireObjectCoercible
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $argument): BooleanValue|NumberValue|BigIntValue|StringValue|SymbolValue|ObjectValue;
+    public function __invoke(LanguageValue $argument): BooleanValue|NumberValue|BigIntValue|StringValue|SymbolValue|ObjectValue;
 }

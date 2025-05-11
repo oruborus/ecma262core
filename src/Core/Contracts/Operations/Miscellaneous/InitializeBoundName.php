@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Miscellaneous;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -18,5 +17,5 @@ interface InitializeBoundName
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, StringValue $name, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): LanguageValue;
+    public function __invoke(StringValue $name, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): LanguageValue;
 }

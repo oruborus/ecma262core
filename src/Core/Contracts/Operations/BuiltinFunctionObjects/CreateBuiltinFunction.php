@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\BuiltinFunctionObjects;
 
 use Closure;
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\NumberValue;
@@ -21,5 +20,5 @@ interface CreateBuiltinFunction
      *
      * @param ListValue<FieldName> $internalSlotsList
      */
-    public function __invoke(Agent $agent, Closure $steps, NumberValue $length, StringValue|SymbolValue $name, ListValue $internalSlotsList, ?RealmRecord $realm = null, ?ObjectValue $prototype = null, ?StringValue $prefix = null): ObjectValue;
+    public function __invoke(Closure $steps, NumberValue $length, StringValue|SymbolValue $name, ListValue $internalSlotsList, ?RealmRecord $realm = null, ?ObjectValue $prototype = null, ?StringValue $prefix = null): ObjectValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -17,5 +16,5 @@ interface FromClause extends Node, HasContains
      *
      * @return ListValue<StringValue>
      */
-    public function moduleRequests(Agent $agent): ListValue;
+    public function moduleRequests(): ListValue;
 }

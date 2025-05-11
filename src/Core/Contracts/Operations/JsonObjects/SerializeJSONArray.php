@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\JsonObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -26,5 +25,5 @@ interface SerializeJSONArray
      * } $state
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, array $state, LanguageValue $value): StringValue;
+    public function __invoke(array $state, LanguageValue $value): StringValue;
 }

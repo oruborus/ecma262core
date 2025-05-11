@@ -7,10 +7,8 @@ namespace Oru\EcmaScript\Core\Contracts;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ExecutionContext;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
-use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
-use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface Agent extends Container
 {
@@ -58,16 +56,8 @@ interface Agent extends Container
      */
     public function setWellKnownSymbols(array $wellKnownSymbols): void;
 
-    public function getInterpreter(): Interpreter;
-
     /** @var ListValue<array{key: StringValue, symbol: SymbolValue}> $globalSymbolRegistry */
     public ListValue $globalSymbolRegistry { get; }
-
-    public function createError(string $type = 'AggregateError', string $message = '', ?ObjectValue $errors = null): ObjectValue;
-
-    public function createErrorThrowCompletion(string $type = 'AggregateError', string $message = '', ?ObjectValue $errors = null): ThrowCompletion;
-
-    public function createSyntaxError(string $message, ?Position $position = null): ThrowCompletion;
 
     public function getLittleEndian(): BooleanValue;
 

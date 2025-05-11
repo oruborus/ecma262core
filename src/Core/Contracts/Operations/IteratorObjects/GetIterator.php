@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IteratorObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\GeneratorKind;
 use Oru\EcmaScript\Core\Contracts\Values\IteratorRecord;
@@ -19,5 +18,5 @@ interface GetIterator
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $obj, ?GeneratorKind $hint = null, null|UndefinedValue|ObjectValue $method = null): IteratorRecord;
+    public function __invoke(LanguageValue $obj, ?GeneratorKind $hint = null, null|UndefinedValue|ObjectValue $method = null): IteratorRecord;
 }

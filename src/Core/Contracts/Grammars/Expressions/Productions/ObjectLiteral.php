@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface ObjectLiteral extends PrimaryExpression
@@ -14,5 +13,5 @@ interface ObjectLiteral extends PrimaryExpression
      *
      * @throws ThrowCompletion
      */
-    public function coveredAssignmentPattern(Agent $agent): AssignmentPattern;
+    public function coveredAssignmentPattern(): AssignmentPattern;
 }

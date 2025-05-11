@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\NamespaceObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\CyclicModuleRecord;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -20,5 +19,5 @@ interface ModuleNamespaceCreate
      * 
      * @param ListValue<StringValue> $exports
      */
-    public function __invoke(Agent $agent, CyclicModuleRecord $module, ListValue $exports): ObjectValue;
+    public function __invoke(CyclicModuleRecord $module, ListValue $exports): ObjectValue;
 }

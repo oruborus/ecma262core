@@ -17,5 +17,5 @@ interface HostEnqueuePromiseJob
      * 
      * @param callable(Agent):LanguageValue $job
      */
-    public function __invoke(Agent $agent, callable $job, NullValue|RealmRecord $realm): UnusedValue;
+    public function __invoke(callable $job, NullValue|RealmRecord $realm): UnusedValue;
 }

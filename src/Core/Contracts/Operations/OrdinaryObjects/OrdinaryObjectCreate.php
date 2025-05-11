@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\OrdinaryObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\NullValue;
@@ -17,5 +16,5 @@ interface OrdinaryObjectCreate
      *
      * @param ListValue<FieldName> $additionalInternalSlotsList
      */
-    public function __invoke(Agent $agent, ObjectValue|NullValue $prototype, ?ListValue $additionalInternalSlotsList = null): ObjectValue;
+    public function __invoke(ObjectValue|NullValue $prototype, ?ListValue $additionalInternalSlotsList = null): ObjectValue;
 }

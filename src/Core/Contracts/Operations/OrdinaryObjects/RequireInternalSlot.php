@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\OrdinaryObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -17,5 +16,5 @@ interface RequireInternalSlot
      * 
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $object, FieldName $internalSlot): UnusedValue;
+    public function __invoke(LanguageValue $object, FieldName $internalSlot): UnusedValue;
 }

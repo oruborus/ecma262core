@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\LeftHandSideExpressions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -19,5 +18,5 @@ interface MakeSuperPropertyReference
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $actualThis, StringValue|SymbolValue $propertyKey, BooleanValue $strict): ReferenceRecord;
+    public function __invoke(LanguageValue $actualThis, StringValue|SymbolValue $propertyKey, BooleanValue $strict): ReferenceRecord;
 }

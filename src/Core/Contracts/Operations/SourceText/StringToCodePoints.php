@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\SourceText;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
@@ -15,5 +14,5 @@ interface StringToCodePoints
      *
      * @return ListValue<int>
      */
-    public function __invoke(Agent $agent, StringValue $string): ListValue;
+    public function __invoke(StringValue $string): ListValue;
 }

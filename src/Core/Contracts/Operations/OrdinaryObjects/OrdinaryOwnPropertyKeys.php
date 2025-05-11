@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\OrdinaryObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
@@ -17,5 +16,5 @@ interface OrdinaryOwnPropertyKeys
      *
      * @return ListValue<StringValue|SymbolValue>
      */
-    public function __invoke(Agent $agent, ObjectValue $object): ListValue;
+    public function __invoke(ObjectValue $object): ListValue;
 }

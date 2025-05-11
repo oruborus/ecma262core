@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\AsyncGeneratorObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\UndefinedValue;
@@ -16,5 +15,5 @@ interface AsyncGeneratorResumeNext
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $generator): UndefinedValue;
+    public function __invoke(ObjectValue $generator): UndefinedValue;
 }

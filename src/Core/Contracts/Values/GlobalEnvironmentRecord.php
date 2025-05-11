@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 
 interface GlobalEnvironmentRecord extends EnvironmentRecord
 {
     /**
      * @throws AbruptCompletion
      */
-    public function hasBinding(Agent $agent, StringValue $n): BooleanValue;
+    public function hasBinding(StringValue $n): BooleanValue;
 
     public function setObjectRecord(ObjectEnvironmentRecord $value): void;
 
@@ -33,30 +32,30 @@ interface GlobalEnvironmentRecord extends EnvironmentRecord
     /**
      * @return ListValue<StringValue>
      */
-    public function getVarNames(Agent $agent): ListValue;
+    public function getVarNames(): ListValue;
 
-    public function getThisBinding(Agent $agent): ObjectValue;
+    public function getThisBinding(): ObjectValue;
 
-    public function hasVarDeclaration(Agent $agent, StringValue $n): BooleanValue;
+    public function hasVarDeclaration(StringValue $n): BooleanValue;
 
-    public function hasLexicalDeclaration(Agent $agent, StringValue $n): BooleanValue;
-
-    /**
-     * @throws AbruptCompletion
-     */
-    public function hasRestrictedGlobalProperty(Agent $agent, StringValue $n): BooleanValue;
+    public function hasLexicalDeclaration(StringValue $n): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function canDeclareGlobalVar(Agent $agent, StringValue $n): BooleanValue;
+    public function hasRestrictedGlobalProperty(StringValue $n): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function canDeclareGlobalFunction(Agent $agent, StringValue $n): BooleanValue;
+    public function canDeclareGlobalVar(StringValue $n): BooleanValue;
 
-    public function createGlobalVarBinding(Agent $agent, StringValue $n, BooleanValue $d): ?AbruptCompletion;
+    /**
+     * @throws AbruptCompletion
+     */
+    public function canDeclareGlobalFunction(StringValue $n): BooleanValue;
 
-    public function createGlobalFunctionBinding(Agent $agent, StringValue $n, ObjectValue $v, BooleanValue $d): ?AbruptCompletion;
+    public function createGlobalVarBinding(StringValue $n, BooleanValue $d): ?AbruptCompletion;
+
+    public function createGlobalFunctionBinding(StringValue $n, ObjectValue $v, BooleanValue $d): ?AbruptCompletion;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -17,5 +16,5 @@ interface GeneratorBody extends FunctionBody
      *
      * @param ListValue<LanguageValue> $argumentsList
      */
-    public function evaluateGeneratorBody(Agent $agent, ObjectValue $functionObject, ListValue $argumentsList): AbruptCompletion;
+    public function evaluateGeneratorBody(ObjectValue $functionObject, ListValue $argumentsList): AbruptCompletion;
 }

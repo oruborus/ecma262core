@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Scripts;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\RealmRecord;
@@ -18,5 +17,5 @@ interface ParseScript
      * @param ListValue<int> $sourceText
      * @return ScriptRecord|ListValue<ObjectValue>
      */
-    public function __invoke(Agent $agent, ListValue $sourceText, RealmRecord $realm, mixed $hostDefined): ScriptRecord|ListValue;
+    public function __invoke(ListValue $sourceText, RealmRecord $realm, mixed $hostDefined): ScriptRecord|ListValue;
 }

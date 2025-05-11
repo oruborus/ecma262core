@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\JsonObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
@@ -16,5 +15,5 @@ interface QuoteJSONString
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, StringValue $value): StringValue;
+    public function __invoke(StringValue $value): StringValue;
 }

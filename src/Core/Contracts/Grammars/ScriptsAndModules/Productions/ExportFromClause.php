@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\ExportEntry;
@@ -19,12 +18,12 @@ interface ExportFromClause extends Node, HasContains
      *
      * @return ListValue<StringValue>
      */
-    public function exportedNames(Agent $agent): ListValue;
+    public function exportedNames(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportentriesformodule
      *
      * @return ListValue<ExportEntry>
      */
-    public function exportEntriesForModule(Agent $agent, StringValue|NullValue $module): ListValue;
+    public function exportEntriesForModule(StringValue|NullValue $module): ListValue;
 }

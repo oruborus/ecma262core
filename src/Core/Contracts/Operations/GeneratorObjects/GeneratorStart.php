@@ -20,5 +20,5 @@ interface GeneratorStart
      * 
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $generator, Node|callable $generatorBody): UndefinedValue;
+    public function __invoke(ObjectValue $generator, Node|callable $generatorBody): UndefinedValue;
 }

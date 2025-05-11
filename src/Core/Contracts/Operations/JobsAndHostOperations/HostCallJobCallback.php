@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\JobsAndHostOperations;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\JobCallback;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -19,5 +18,5 @@ interface HostCallJobCallback
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, JobCallback $jobCallback, LanguageValue $v, ListValue $argumentsList): LanguageValue;
+    public function __invoke(JobCallback $jobCallback, LanguageValue $v, ListValue $argumentsList): LanguageValue;
 }

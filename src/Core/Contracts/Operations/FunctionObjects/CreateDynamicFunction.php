@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\FunctionObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\DynamicFunctionKind;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -20,5 +19,5 @@ interface CreateDynamicFunction
      * @param ListValue<LanguageValue> $parameterArgs
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $constructor, UndefinedValue|ObjectValue $newTarget, DynamicFunctionKind $kind, ListValue $parameterArgs, LanguageValue $bodyArg): ObjectValue;
+    public function __invoke(ObjectValue $constructor, UndefinedValue|ObjectValue $newTarget, DynamicFunctionKind $kind, ListValue $parameterArgs, LanguageValue $bodyArg): ObjectValue;
 }

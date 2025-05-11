@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\GlobalObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -16,5 +15,5 @@ interface PerformEval
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $x, BooleanValue $strictCaller, BooleanValue $direct): LanguageValue;
+    public function __invoke(LanguageValue $x, BooleanValue $strictCaller, BooleanValue $direct): LanguageValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 
 /**
  * @see https://tc39.es/ecma262/#table-module-record-fields
@@ -51,7 +50,7 @@ interface ModuleRecord extends SpecificationValue
     /**
      * Prepares the module for linking by recursively loading all its dependencies, and returns a promise.
      */
-    public function loadRequestedModules(Agent $agent, mixed $hostDefined = null): ObjectValue;
+    public function loadRequestedModules(mixed $hostDefined = null): ObjectValue;
 
     /**
      * Return a list of all names that are either directly or indirectly exported from this module.
@@ -63,7 +62,7 @@ interface ModuleRecord extends SpecificationValue
      * @param ?ListValue<SourceTextModuleRecord> $exportStarSet
      * @return ListValue<StringValue>
      */
-    public function getExportedNames(Agent $agent, ?ListValue $exportStarSet = null): ListValue;
+    public function getExportedNames(?ListValue $exportStarSet = null): ListValue;
 
     /**
      * Return the binding of a name exported by this module. Bindings are represented by a ResolvedBinding Record, 
@@ -77,7 +76,7 @@ interface ModuleRecord extends SpecificationValue
      * @param ?ListValue<ModuleExportNamePair> $resolveSet
      * @return ResolvedBinding|NullValue|EntryResult::AMBIGUOUS
      */
-    public function resolveExport(Agent $agent, StringValue $exportName, ?ListValue $resolveSet = null): ResolvedBinding|NullValue|EntryResult;
+    public function resolveExport(StringValue $exportName, ?ListValue $resolveSet = null): ResolvedBinding|NullValue|EntryResult;
 
     /**
      * Prepare the module for evaluation by transitively resolving all module dependencies and
@@ -87,7 +86,7 @@ interface ModuleRecord extends SpecificationValue
      * 
      * @throws AbruptCompletion
      */
-    public function link(Agent $agent): UnusedValue;
+    public function link(): UnusedValue;
 
     /**
      * Returns a promise for the evaluation of this module and its dependencies,
@@ -98,5 +97,5 @@ interface ModuleRecord extends SpecificationValue
      * 
      * Link must have completed successfully prior to invoking this method.
      */
-    public function evaluate(Agent $agent): ObjectValue;
+    public function evaluate(): ObjectValue;
 }

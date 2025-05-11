@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\ProxyObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\UnusedValue;
@@ -16,5 +15,5 @@ interface ValidateNonRevokedProxy
      *
      * @throws ThrowCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $proxy): UnusedValue;
+    public function __invoke(ObjectValue $proxy): UnusedValue;
 }

@@ -4,57 +4,56 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 
 interface EnvironmentRecord extends SpecificationValue
 {
     public function setOuterEnv(NullValue|EnvironmentRecord $v): void;
 
-    public function getOuterEnv(Agent $agent): NullValue|EnvironmentRecord;
+    public function getOuterEnv(): NullValue|EnvironmentRecord;
 
     /**
      * @throws AbruptCompletion
      */
-    public function hasBinding(Agent $agent, StringValue $n): BooleanValue;
+    public function hasBinding(StringValue $n): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function createMutableBinding(Agent $agent, StringValue $n, BooleanValue $d): UnusedValue;
+    public function createMutableBinding(StringValue $n, BooleanValue $d): UnusedValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function createImmutableBinding(Agent $agent, StringValue $n, BooleanValue $s): UnusedValue;
+    public function createImmutableBinding(StringValue $n, BooleanValue $s): UnusedValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function initializeBinding(Agent $agent, StringValue $n, LanguageValue $v): UnusedValue;
+    public function initializeBinding(StringValue $n, LanguageValue $v): UnusedValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function setMutableBinding(Agent $agent, StringValue $n, LanguageValue $v, BooleanValue $s): UnusedValue;
+    public function setMutableBinding(StringValue $n, LanguageValue $v, BooleanValue $s): UnusedValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function getBindingValue(Agent $agent, StringValue $n, BooleanValue $s): LanguageValue;
+    public function getBindingValue(StringValue $n, BooleanValue $s): LanguageValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function deleteBinding(Agent $agent, StringValue $n): BooleanValue;
+    public function deleteBinding(StringValue $n): BooleanValue;
 
-    public function hasThisBinding(Agent $agent): BooleanValue;
+    public function hasThisBinding(): BooleanValue;
 
-    public function hasSuperBinding(Agent $agent): BooleanValue;
+    public function hasSuperBinding(): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function getThisBinding(Agent $agent): LanguageValue;
+    public function getThisBinding(): LanguageValue;
 
-    public function withBaseObject(Agent $agent): ObjectValue|UndefinedValue;
+    public function withBaseObject(): ObjectValue|UndefinedValue;
 }

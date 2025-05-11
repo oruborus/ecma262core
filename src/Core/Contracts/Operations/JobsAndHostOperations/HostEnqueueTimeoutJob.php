@@ -18,5 +18,5 @@ interface HostEnqueueTimeoutJob
      * 
      * @param callable(Agent):LanguageValue $timeoutJob
      */
-    public function __invoke(Agent $agent, callable $timeoutJob, NullValue|RealmRecord $realm, NumberValue $miliseconds): UnusedValue;
+    public function __invoke(callable $timeoutJob, NullValue|RealmRecord $realm, NumberValue $miliseconds): UnusedValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\RegExpObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\MatchRecord;
@@ -20,5 +19,5 @@ interface MakeMatchIndicesIndexPairArray
      * @param ListValue<MatchRecord|UndefinedValue> $indices
      * @param ListValue<StringValue|UndefinedValue> $groupNames
      */
-    public function __invoke(Agent $agent, StringValue $s, ListValue $indices, ListValue $groupNames, BooleanValue $hasGroups): ObjectValue;
+    public function __invoke(StringValue $s, ListValue $indices, ListValue $groupNames, BooleanValue $hasGroups): ObjectValue;
 }

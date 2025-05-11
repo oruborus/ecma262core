@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasBoundNames;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContainsExpression;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -23,5 +22,5 @@ interface BindingPropertyList extends HasBoundNames, HasContainsExpression, Bind
      * @return ListValue<StringValue|SymbolValue>
      * @throws AbruptCompletion
      */
-    public function propertyBindingInitialization(Agent $agent, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): ListValue;
+    public function propertyBindingInitialization(LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): ListValue;
 }

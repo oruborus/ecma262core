@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -17,5 +16,5 @@ interface AssignmentPattern extends Node, HasContains
      *
      * @throws AbruptCompletion
      */
-    public function destructuringAssignmentEvaluation(Agent $agent, LanguageValue $value): LanguageValue;
+    public function destructuringAssignmentEvaluation(LanguageValue $value): LanguageValue;
 }

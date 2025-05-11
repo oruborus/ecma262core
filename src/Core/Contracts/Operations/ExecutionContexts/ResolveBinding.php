@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\ExecutionContexts;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\ReferenceRecord;
@@ -18,5 +17,5 @@ interface ResolveBinding
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, StringValue $name, null|EnvironmentRecord|UndefinedValue $env = null): ReferenceRecord;
+    public function __invoke(StringValue $name, null|EnvironmentRecord|UndefinedValue $env = null): ReferenceRecord;
 }

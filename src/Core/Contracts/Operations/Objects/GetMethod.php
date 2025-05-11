@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Objects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -19,5 +18,5 @@ interface GetMethod
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $value, StringValue|SymbolValue $propertyKey): UndefinedValue|ObjectValue;
+    public function __invoke(LanguageValue $value, StringValue|SymbolValue $propertyKey): UndefinedValue|ObjectValue;
 }

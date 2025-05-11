@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
@@ -15,5 +14,5 @@ interface NamedExports extends ExportFromClause
      *
      * @return ListValue<StringValue>
      */
-    public function exportedBindings(Agent $agent): ListValue;
+    public function exportedBindings(): ListValue;
 }

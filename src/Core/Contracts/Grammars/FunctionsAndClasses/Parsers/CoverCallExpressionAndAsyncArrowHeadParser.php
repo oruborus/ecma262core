@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Parsers;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\CoverCallExpressionAndAsyncArrowHead;
 use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
@@ -17,5 +16,5 @@ interface CoverCallExpressionAndAsyncArrowHeadParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Agent $agent, Lexer $lexer, Parameters $parameters): ?CoverCallExpressionAndAsyncArrowHead;
+    public function parse(Lexer $lexer, Parameters $parameters): ?CoverCallExpressionAndAsyncArrowHead;
 }

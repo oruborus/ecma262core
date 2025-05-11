@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\SourceText;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\Values\GoalSymbol;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -21,5 +20,5 @@ interface ParseText
      * @param GoalSymbol<TNode> $goalSymbol
      * @return TNode|ListValue<ObjectValue>
      */
-    public function __invoke(Agent $agent, StringValue|ListValue $sourceText, GoalSymbol $goalSymbol): Node|ListValue;
+    public function __invoke(StringValue|ListValue $sourceText, GoalSymbol $goalSymbol): Node|ListValue;
 }

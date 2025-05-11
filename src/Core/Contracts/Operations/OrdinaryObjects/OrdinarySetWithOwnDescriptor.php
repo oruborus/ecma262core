@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\OrdinaryObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -21,5 +20,5 @@ interface OrdinarySetWithOwnDescriptor
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $object, StringValue|SymbolValue $propertyKey, LanguageValue $value, LanguageValue $receiver, PropertyDescriptor|UndefinedValue $ownDescriptor): BooleanValue;
+    public function __invoke(ObjectValue $object, StringValue|SymbolValue $propertyKey, LanguageValue $value, LanguageValue $receiver, PropertyDescriptor|UndefinedValue $ownDescriptor): BooleanValue;
 }

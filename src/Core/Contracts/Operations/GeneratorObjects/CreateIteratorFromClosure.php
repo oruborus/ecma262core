@@ -16,5 +16,5 @@ interface CreateIteratorFromClosure
      *
      * @param callable(Agent): LanguageValue $closure
      */
-    public function __invoke(Agent $agent, callable $closure, GeneratorBrand $generatorBrand, ObjectValue $generatorPrototype): ObjectValue;
+    public function __invoke(callable $closure, GeneratorBrand $generatorBrand, ObjectValue $generatorPrototype): ObjectValue;
 }

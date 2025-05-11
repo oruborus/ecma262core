@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Parsers;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\AsyncArrowHead;
 use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
@@ -14,5 +13,5 @@ interface AsyncArrowHeadParser
     /**
      * @see https://tc39.es/ecma262/#prod-AsyncArrowHead
      */
-    public function parse(Agent $agent, Lexer $lexer, Parameters $parameters): ?AsyncArrowHead;
+    public function parse(Lexer $lexer, Parameters $parameters): ?AsyncArrowHead;
 }

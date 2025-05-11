@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Parsers;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\FromClause;
 use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
@@ -17,12 +16,12 @@ interface FromClauseParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Agent $agent, Lexer $lexer, Parameters $parameters): ?FromClause;
+    public function parse(Lexer $lexer, Parameters $parameters): ?FromClause;
 
     /**
      * @see https://tc39.es/ecma262/#prod-FromClause
      *
      * @throws ThrowCompletion
      */
-    public function parseOrFail(Agent $agent, Lexer $lexer, Parameters $parameters): FromClause;
+    public function parseOrFail(Lexer $lexer, Parameters $parameters): FromClause;
 }

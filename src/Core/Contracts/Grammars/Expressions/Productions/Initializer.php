@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -16,7 +15,7 @@ interface Initializer extends Node, HasContains
     /**
      * @throws AbruptCompletion
      */
-    public function evaluate(Agent $agent): LanguageValue|ReferenceRecord;
+    public function evaluate(): LanguageValue|ReferenceRecord;
 
     public function getAssignmentExpression(): AssignmentExpression;
 }

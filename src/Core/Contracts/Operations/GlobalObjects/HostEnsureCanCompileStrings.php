@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\GlobalObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -20,5 +19,5 @@ interface HostEnsureCanCompileStrings
      * @param ListValue<StringValue> $parameterStrings
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, RealmRecord $calleeRealm, ListValue $parameterStrings, StringValue $bodyString, BooleanValue $direct): UnusedValue;
+    public function __invoke(RealmRecord $calleeRealm, ListValue $parameterStrings, StringValue $bodyString, BooleanValue $direct): UnusedValue;
 }

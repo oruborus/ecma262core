@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IterationStatements;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Expression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\Statement;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -21,5 +20,5 @@ interface ForBodyEvaluation
      * @param ListValue<StringValue> $labelSet
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ?Expression $test, ?Expression $increment, Statement $stmt, ListValue $perIterationBindings, ListValue $labelSet): LanguageValue;
+    public function __invoke(?Expression $test, ?Expression $increment, Statement $stmt, ListValue $perIterationBindings, ListValue $labelSet): LanguageValue;
 }

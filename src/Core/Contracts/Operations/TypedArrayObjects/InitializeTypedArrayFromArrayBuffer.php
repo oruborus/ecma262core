@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\TypedArrayObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -16,5 +15,5 @@ interface InitializeTypedArrayFromArrayBuffer
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $o, ObjectValue $buffer, LanguageValue $byteOffset, LanguageValue $length): null;
+    public function __invoke(ObjectValue $o, ObjectValue $buffer, LanguageValue $byteOffset, LanguageValue $length): null;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -20,5 +19,5 @@ interface Binding extends Node, HasContains
      *
      * @throws AbruptCompletion
      */
-    public function iteratorBindingInitialization(Agent $agent, IteratorRecord $iteratorRecord, EnvironmentRecord|UndefinedValue $environment): LanguageValue;
+    public function iteratorBindingInitialization(IteratorRecord $iteratorRecord, EnvironmentRecord|UndefinedValue $environment): LanguageValue;
 }

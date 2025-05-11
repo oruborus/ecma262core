@@ -7,7 +7,6 @@ namespace Oru\EcmaScript\Core\Contracts\Values;
 use ArrayAccess;
 use Countable;
 use Iterator;
-use Oru\EcmaScript\Core\Contracts\Agent;
 
 /**
  * @template TValue
@@ -49,7 +48,7 @@ interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
      * @param TValue $value
      * @return static<TValue>
      */
-    public function unshift(Agent $agent, mixed $value): static;
+    public function unshift(mixed $value): static;
 
     public function isUnique(): bool;
 }

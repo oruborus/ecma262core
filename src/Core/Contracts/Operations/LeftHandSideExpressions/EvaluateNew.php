@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\LeftHandSideExpressions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Arguments;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\MemberExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\NewExpression;
@@ -18,5 +17,5 @@ interface EvaluateNew
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, NewExpression|MemberExpression $constructExpr, ?Arguments $arguments): LanguageValue;
+    public function __invoke(NewExpression|MemberExpression $constructExpr, ?Arguments $arguments): LanguageValue;
 }

@@ -80,5 +80,5 @@ interface Lexer
      *
      * @throws ThrowCompletion
      */
-    public function automaticSemicolonInsertion(Agent $agent): void;
+    public function automaticSemicolonInsertion(): void;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\GeneratorObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\GeneratorBrand;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -19,5 +18,5 @@ interface GeneratorResumeAbrupt
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $generator, ReturnCompletion|ThrowCompletion $abruptCompletion, GeneratorBrand $generatorBrand): LanguageValue;
+    public function __invoke(ObjectValue $generator, ReturnCompletion|ThrowCompletion $abruptCompletion, GeneratorBrand $generatorBrand): LanguageValue;
 }

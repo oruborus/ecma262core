@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 
 interface FunctionEnvironmentRecord extends DeclarativeEnvironmentRecord
 {
@@ -33,15 +32,15 @@ interface FunctionEnvironmentRecord extends DeclarativeEnvironmentRecord
     /**
      * @throws AbruptCompletion
      */
-    public function bindThisValue(Agent $agent, LanguageValue $v): LanguageValue;
+    public function bindThisValue(LanguageValue $v): LanguageValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function getThisBinding(Agent $agent): LanguageValue;
+    public function getThisBinding(): LanguageValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function getSuperBase(Agent $agent): ObjectValue|NullValue|UndefinedValue;
+    public function getSuperBase(): ObjectValue|NullValue|UndefinedValue;
 }

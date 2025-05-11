@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Parsers;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ElementList;
 use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
@@ -17,12 +16,12 @@ interface ElementListParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Agent $agent, Lexer $lexer, Parameters $parameters): ?ElementList;
+    public function parse(Lexer $lexer, Parameters $parameters): ?ElementList;
 
     /**
      * @see https://tc39.es/ecma262/#prod-ElementList
      *
      * @throws ThrowCompletion
      */
-    public function parseOrFail(Agent $agent, Lexer $lexer, Parameters $parameters): ElementList;
+    public function parseOrFail(Lexer $lexer, Parameters $parameters): ElementList;
 }

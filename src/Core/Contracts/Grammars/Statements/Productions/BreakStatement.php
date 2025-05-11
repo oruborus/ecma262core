@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BreakCompletion;
 
 interface BreakStatement extends Statement
@@ -14,5 +13,5 @@ interface BreakStatement extends Statement
      *
      * @throws BreakCompletion
      */
-    public function evaluate(Agent $agent): never;
+    public function evaluate(): never;
 }

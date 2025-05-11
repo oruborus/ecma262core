@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\Declaration;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -16,5 +15,5 @@ interface ClassDeclaration extends Declaration
      *
      * @throws AbruptCompletion
      */
-    public function bindingClassDeclarationEvaluation(Agent $agent): LanguageValue;
+    public function bindingClassDeclarationEvaluation(): LanguageValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\ArrayBufferObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BigIntValue;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -18,5 +17,5 @@ interface RawBytesToNumeric
      *
      * @param ListValue<int> $rawBytes
      */
-    public function __invoke(Agent $agent, TypedArrayType $type, ListValue $rawBytes, BooleanValue $isLittleEndian): NumberValue|BigIntValue;
+    public function __invoke(TypedArrayType $type, ListValue $rawBytes, BooleanValue $isLittleEndian): NumberValue|BigIntValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Stringable;
 
 interface StringValue extends LanguageValue, Stringable
@@ -27,9 +26,9 @@ interface StringValue extends LanguageValue, Stringable
 
     public function ord(): int;
 
-    public function substr(Agent $agent, NumberValue $start, NumberValue $length): StringValue;
+    public function substr(NumberValue $start, NumberValue $length): StringValue;
 
-    public function stringIndexOf(Agent $agent, StringValue $searchValue, NumberValue $fromIndex): NumberValue;
+    public function stringIndexOf(StringValue $searchValue, NumberValue $fromIndex): NumberValue;
 
     public function codePointAt(int $index): int;
 

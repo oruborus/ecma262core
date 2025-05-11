@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\ArgumentsObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\UniqueFormalParameters;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -18,5 +17,5 @@ interface CreateMappedArgumentsObject
      *
      * @param ListValue<LanguageValue> $argumentsList
      */
-    public function __invoke(Agent $agent, ObjectValue $func, UniqueFormalParameters $formals, ListValue $argumentsList, EnvironmentRecord $env): ObjectValue;
+    public function __invoke(ObjectValue $func, UniqueFormalParameters $formals, ListValue $argumentsList, EnvironmentRecord $env): ObjectValue;
 }

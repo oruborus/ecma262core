@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IterationStatements;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
@@ -18,5 +17,5 @@ interface CreatePerIterationEnvironment
      * @param ListValue<StringValue> $perIterationBindings
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ListValue $perIterationBindings): UndefinedValue;
+    public function __invoke(ListValue $perIterationBindings): UndefinedValue;
 }

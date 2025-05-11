@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\OrdinaryObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -19,5 +18,5 @@ interface OrdinaryCreateFromConstructor
      * @param ?ListValue<FieldName> $internalSlotsList
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $constructor, StringValue $intrinsicDefaultProto, ?ListValue $internalSlotsList = null): ObjectValue;
+    public function __invoke(ObjectValue $constructor, StringValue $intrinsicDefaultProto, ?ListValue $internalSlotsList = null): ObjectValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\InputElementType;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
@@ -21,10 +20,10 @@ interface ClassElementName extends Node, HasContains, HasPropName
      *
      * @throws AbruptCompletion
      */
-    public function evaluate(Agent $agent): StringValue|SymbolValue;
+    public function evaluate(): StringValue|SymbolValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-computedpropertycontains
      */
-    function computedPropertyContains(Agent $agent, string|InputElementType $symbol): BooleanValue;
+    function computedPropertyContains(string|InputElementType $symbol): BooleanValue;
 }

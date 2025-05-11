@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Objects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -18,5 +17,5 @@ interface DeletePropertyOrThrow
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $o, StringValue|SymbolValue $p): BooleanValue;
+    public function __invoke(ObjectValue $o, StringValue|SymbolValue $p): BooleanValue;
 }

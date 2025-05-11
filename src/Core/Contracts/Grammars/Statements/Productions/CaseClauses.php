@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
@@ -16,49 +15,49 @@ interface CaseClauses extends Node, HasContains
     /**
      * @return ListValue<CaseClause>
      */
-    public function getContainedCaseClauses(Agent $agent): ListValue;
+    public function getContainedCaseClauses(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallydeclarednames
      *
      * @return ListValue<StringValue>
      */
-    public function lexicallyDeclaredNames(Agent $agent): ListValue;
+    public function lexicallyDeclaredNames(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallyscopeddeclarations
      *
      * @return ListValue<Declaration>
      */
-    public function lexicallyScopedDeclarations(Agent $agent): ListValue;
+    public function lexicallyScopedDeclarations(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-vardeclarednames
      *
      * @return ListValue<StringValue>
      */
-    public function varDeclaredNames(Agent $agent): ListValue;
+    public function varDeclaredNames(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-varscopeddeclarations
      *
      * @return ListValue<Declaration>
      */
-    public function varScopedDeclarations(Agent $agent): ListValue;
+    public function varScopedDeclarations(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsduplicatelabels
      *
      * @param ListValue<StringValue> $labelSet
      */
-    public function containsDuplicateLabels(Agent $agent, ListValue $labelSet): BooleanValue;
+    public function containsDuplicateLabels(ListValue $labelSet): BooleanValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsundefinedbreaktarget
      *
      * @param ListValue<StringValue> $labelSet
      */
-    public function containsUndefinedBreakTarget(Agent $agent, ListValue $labelSet): BooleanValue;
+    public function containsUndefinedBreakTarget(ListValue $labelSet): BooleanValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsundefinedcontinuetarget
@@ -66,5 +65,5 @@ interface CaseClauses extends Node, HasContains
      * @param ListValue<StringValue> $iterationSet
      * @param ListValue<StringValue> $labelSet
      */
-    public function containsUndefinedContinueTarget(Agent $agent, ListValue $iterationSet, ListValue $labelSet): BooleanValue;
+    public function containsUndefinedContinueTarget(ListValue $iterationSet, ListValue $labelSet): BooleanValue;
 }

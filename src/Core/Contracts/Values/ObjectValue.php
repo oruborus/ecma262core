@@ -6,7 +6,6 @@ namespace Oru\EcmaScript\Core\Contracts\Values;
 
 use Closure;
 use Generator;
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\FieldName;
 
 interface ObjectValue extends LanguageValue
@@ -18,11 +17,11 @@ interface ObjectValue extends LanguageValue
 
     public function getInternalSlot(FieldName $slot): mixed;
 
-    public function setPropertyDescriptor(Agent $agent, StringValue|SymbolValue $propertyKey, PropertyDescriptor $propertyDescriptor): void;
+    public function setPropertyDescriptor(StringValue|SymbolValue $propertyKey, PropertyDescriptor $propertyDescriptor): void;
 
-    public function getPropertyDescriptor(Agent $agent, StringValue|SymbolValue $propertyKey): ?PropertyDescriptor;
+    public function getPropertyDescriptor(StringValue|SymbolValue $propertyKey): ?PropertyDescriptor;
 
-    public function deletePropertyDescriptor(Agent $agent, StringValue|SymbolValue $propertyKey): void;
+    public function deletePropertyDescriptor(StringValue|SymbolValue $propertyKey): void;
 
     /** @return Generator<StringValue|SymbolValue, PropertyDescriptor> */
     public function getAllPropertyDescriptors(): Generator;
@@ -30,67 +29,67 @@ interface ObjectValue extends LanguageValue
     /**
      * @throws AbruptCompletion
      */
-    public function getPrototypeOf(Agent $agent): ObjectValue|NullValue;
+    public function getPrototypeOf(): ObjectValue|NullValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function setPrototypeOf(Agent $agent, ObjectValue|NullValue $v): LanguageValue;
+    public function setPrototypeOf(ObjectValue|NullValue $v): LanguageValue;
 
-    public function isExtensible(Agent $agent): BooleanValue;
-
-    /**
-     * @throws AbruptCompletion
-     */
-    public function preventExtensions(Agent $agent): BooleanValue;
+    public function isExtensible(): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function getOwnProperty(Agent $agent, StringValue|SymbolValue $p): PropertyDescriptor|UndefinedValue;
+    public function preventExtensions(): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function defineOwnProperty(Agent $agent, StringValue|SymbolValue $p, PropertyDescriptor $desc): BooleanValue;
+    public function getOwnProperty(StringValue|SymbolValue $p): PropertyDescriptor|UndefinedValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function hasProperty(Agent $agent, StringValue|SymbolValue $p): BooleanValue;
+    public function defineOwnProperty(StringValue|SymbolValue $p, PropertyDescriptor $desc): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function get(Agent $agent, StringValue|SymbolValue $p, LanguageValue $receiver): LanguageValue;
+    public function hasProperty(StringValue|SymbolValue $p): BooleanValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function set(Agent $agent, StringValue|SymbolValue $p, LanguageValue $v, LanguageValue $receiver): BooleanValue;
+    public function get(StringValue|SymbolValue $p, LanguageValue $receiver): LanguageValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function delete(Agent $agent, StringValue|SymbolValue $p): BooleanValue;
+    public function set(StringValue|SymbolValue $p, LanguageValue $v, LanguageValue $receiver): BooleanValue;
+
+    /**
+     * @throws AbruptCompletion
+     */
+    public function delete(StringValue|SymbolValue $p): BooleanValue;
 
     /**
      * @return ListValue<StringValue|SymbolValue>
      * @throws AbruptCompletion
      */
-    public function ownPropertyKeys(Agent $agent): ListValue;
+    public function ownPropertyKeys(): ListValue;
 
     /**
      * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
-    public function call(Agent $agent, LanguageValue $thisArgument, ListValue $argumentsList): LanguageValue;
+    public function call(LanguageValue $thisArgument, ListValue $argumentsList): LanguageValue;
 
     /**
      * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
-    public function construct(Agent $agent, ListValue $argumentsList, UndefinedValue|ObjectValue $newTarget): LanguageValue;
+    public function construct(ListValue $argumentsList, UndefinedValue|ObjectValue $newTarget): LanguageValue;
 
     /**
      * @psalm-mutation-free
@@ -103,7 +102,7 @@ interface ObjectValue extends LanguageValue
     public function newTarget(): UndefinedValue|ObjectValue;
 
     /**
-     * @param Closure(Agent, LanguageValue...):LanguageValue $behaviour
+     * @param Closure(LanguageValue...):LanguageValue $behaviour
      *
      * @throws RuntimeException
      */
@@ -115,11 +114,11 @@ interface ObjectValue extends LanguageValue
      * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
-    public function builtinCall(Agent $agent, ListValue $argumentsList, LanguageValue $thisArgument): LanguageValue;
+    public function builtinCall(ListValue $argumentsList, LanguageValue $thisArgument): LanguageValue;
 
     /**
      * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
-    public function builtinConstruct(Agent $agent, ListValue $argumentsList, UndefinedValue|ObjectValue $newTarget): LanguageValue;
+    public function builtinConstruct(ListValue $argumentsList, UndefinedValue|ObjectValue $newTarget): LanguageValue;
 }

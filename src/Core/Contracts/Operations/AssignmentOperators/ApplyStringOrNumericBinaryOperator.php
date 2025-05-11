@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\AssignmentOperators;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BigIntValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -18,5 +17,5 @@ interface ApplyStringOrNumericBinaryOperator
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $lval, string $opText, LanguageValue $rval): StringValue|NumberValue|BigIntValue;
+    public function __invoke(LanguageValue $lval, string $opText, LanguageValue $rval): StringValue|NumberValue|BigIntValue;
 }

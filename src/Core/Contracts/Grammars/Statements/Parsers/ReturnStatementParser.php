@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Parsers;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\ReturnStatement;
 use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
@@ -17,12 +16,12 @@ interface ReturnStatementParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Agent $agent, Lexer $lexer, Parameters $parameters): ?ReturnStatement;
+    public function parse(Lexer $lexer, Parameters $parameters): ?ReturnStatement;
 
     /**
      * @see https://tc39.es/ecma262/#prod-ReturnStatement
      *
      * @throws ThrowCompletion
      */
-    public function parseConditional(Agent $agent, Lexer $lexer, Parameters $parameters): ?ReturnStatement;
+    public function parseConditional(Lexer $lexer, Parameters $parameters): ?ReturnStatement;
 }

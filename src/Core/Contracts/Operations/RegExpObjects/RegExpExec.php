@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\RegExpObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\NullValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -17,5 +16,5 @@ interface RegExpExec
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $r, StringValue $s): ObjectValue|NullValue;
+    public function __invoke(ObjectValue $r, StringValue $s): ObjectValue|NullValue;
 }

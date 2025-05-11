@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\StaticSemantics;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
 interface HasCapturingGroupName
@@ -12,5 +11,5 @@ interface HasCapturingGroupName
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-capturinggroupname
      */
-    public function capturingGroupName(Agent $agent): StringValue;
+    public function capturingGroupName(): StringValue;
 }

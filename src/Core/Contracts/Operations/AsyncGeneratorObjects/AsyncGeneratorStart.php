@@ -16,5 +16,5 @@ interface AsyncGeneratorStart
      *
      * @param Node|(callable(Agent): LanguageValue) $generatorBody
      */
-    public function __invoke(Agent $agent, ObjectValue $generator, Node|callable $generatorBody): LanguageValue;
+    public function __invoke(ObjectValue $generator, Node|callable $generatorBody): LanguageValue;
 }

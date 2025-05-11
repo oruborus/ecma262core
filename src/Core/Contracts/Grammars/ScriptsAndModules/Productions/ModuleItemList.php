@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
@@ -16,14 +15,14 @@ interface ModuleItemList extends ModuleBody
      *
      * @param ListValue<StringValue> $labelSet
      */
-    public function containsDuplicateLabels(Agent $agent, ListValue $labelSet): BooleanValue;
+    public function containsDuplicateLabels(ListValue $labelSet): BooleanValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsundefinedbreaktarget
      *
      * @param ListValue<StringValue> $labelSet
      */
-    public function containsUndefinedBreakTarget(Agent $agent, ListValue $labelSet): BooleanValue;
+    public function containsUndefinedBreakTarget(ListValue $labelSet): BooleanValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-containsundefinedcontinuetarget
@@ -31,5 +30,5 @@ interface ModuleItemList extends ModuleBody
      * @param ListValue<StringValue> $iterationSet
      * @param ListValue<StringValue> $labelSet
      */
-    public function containsUndefinedContinueTarget(Agent $agent, ListValue $iterationSet, ListValue $labelSet): BooleanValue;
+    public function containsUndefinedContinueTarget(ListValue $iterationSet, ListValue $labelSet): BooleanValue;
 }

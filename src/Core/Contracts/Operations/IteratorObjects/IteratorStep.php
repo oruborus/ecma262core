@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IteratorObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\IteratorRecord;
@@ -17,5 +16,5 @@ interface IteratorStep
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, IteratorRecord $iteratorRecord): ObjectValue|BooleanValue;
+    public function __invoke(IteratorRecord $iteratorRecord): ObjectValue|BooleanValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IterationStatements;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Expression;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\IteratorRecord;
@@ -19,5 +18,5 @@ interface ForInOfHeadEvaluation
      * @param ListValue<StringValue> $uninitializedBoundNames
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ListValue $uninitializedBoundNames, Expression $expr, string $iterationKind): IteratorRecord;
+    public function __invoke(ListValue $uninitializedBoundNames, Expression $expr, string $iterationKind): IteratorRecord;
 }

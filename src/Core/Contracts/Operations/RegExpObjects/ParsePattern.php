@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\RegExpObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\Pattern;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -18,5 +17,5 @@ interface ParsePattern
      * @param ListValue<int> $patternText
      * @return Pattern|ListValue<ObjectValue> $patternText
      */
-    public function __invoke(Agent $agent, ListValue $patternText, BooleanValue $u, BooleanValue $v): Pattern|ListValue;
+    public function __invoke(ListValue $patternText, BooleanValue $u, BooleanValue $v): Pattern|ListValue;
 }

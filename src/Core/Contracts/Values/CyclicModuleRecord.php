@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 
 /**
  * @see https://tc39.es/ecma262/#table-cyclic-module-fields
@@ -26,7 +25,7 @@ interface CyclicModuleRecord extends ModuleRecord
      *
      * @throws AbruptCompletion
      */
-    public function initializeEnvironment(Agent $agent): UnusedValue;
+    public function initializeEnvironment(): UnusedValue;
 
     /**
      * Evaluate the module's code within its execution context.
@@ -37,5 +36,5 @@ interface CyclicModuleRecord extends ModuleRecord
      *
      * @throws AbruptCompletion
      */
-    public function executeModule(Agent $agent, ?PromiseCapabilityRecord $promiseCapability = null): UnusedValue;
+    public function executeModule(?PromiseCapabilityRecord $promiseCapability = null): UnusedValue;
 }

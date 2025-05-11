@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Realms;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\RealmRecord;
@@ -16,5 +15,5 @@ interface SetDefaultGlobalBindings
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, RealmRecord $realmRec): ObjectValue;
+    public function __invoke(RealmRecord $realmRec): ObjectValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Modules;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\RealmRecord;
@@ -18,5 +17,5 @@ interface ParseModule
      * @param ListValue<int> $sourceText
      * @return SourceTextModuleRecord|ListValue<ObjectValue>
      */
-    public function __invoke(Agent $agent, ListValue $sourceText, RealmRecord $realm, mixed $hostDefined): SourceTextModuleRecord|ListValue;
+    public function __invoke(ListValue $sourceText, RealmRecord $realm, mixed $hostDefined): SourceTextModuleRecord|ListValue;
 }

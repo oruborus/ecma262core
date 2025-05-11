@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\ExportEntry;
@@ -19,28 +18,28 @@ interface Module extends Node, HasContains
      *
      * @return ListValue<StringValue>
      */
-    public function lexicallyDeclaredNames(Agent $agent): ListValue;
+    public function lexicallyDeclaredNames(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallyscopeddeclarations
      *
      * @return ListValue<Declaration>
      */
-    public function lexicallyScopedDeclarations(Agent $agent): ListValue;
+    public function lexicallyScopedDeclarations(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-vardeclarednames
      *
      * @return ListValue<StringValue>
      */
-    public function varDeclaredNames(Agent $agent): ListValue;
+    public function varDeclaredNames(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-varscopeddeclarations
      *
      * @return ListValue<Declaration>
      */
-    public function varScopedDeclarations(Agent $agent): ListValue;
+    public function varScopedDeclarations(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-importedlocalnames
@@ -48,40 +47,40 @@ interface Module extends Node, HasContains
      * @param ListValue<ImportEntry> $importEntries
      * @return ListValue<StringValue>
      */
-    public function importedLocalNames(Agent $agent, ListValue $importEntries): ListValue;
+    public function importedLocalNames(ListValue $importEntries): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-modulerequests
      *
      * @return ListValue<StringValue>
      */
-    public function moduleRequests(Agent $agent): ListValue;
+    public function moduleRequests(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-importentries
      *
      * @return ListValue<ImportEntry>
      */
-    public function importEntries(Agent $agent): ListValue;
+    public function importEntries(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportedbindings
      *
      * @return ListValue<StringValue>
      */
-    public function exportedBindings(Agent $agent): ListValue;
+    public function exportedBindings(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportednames
      *
      * @return ListValue<StringValue>
      */
-    public function exportedNames(Agent $agent): ListValue;
+    public function exportedNames(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-exportentries
      *
      * @return ListValue<ExportEntry>
      */
-    public function exportEntries(Agent $agent): ListValue;
+    public function exportEntries(): ListValue;
 }

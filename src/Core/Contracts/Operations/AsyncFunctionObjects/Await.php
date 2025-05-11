@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\AsyncFunctionObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 
@@ -15,5 +14,5 @@ interface Await
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $value): LanguageValue;
+    public function __invoke(LanguageValue $value): LanguageValue;
 }

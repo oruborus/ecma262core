@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\SetObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 
@@ -15,5 +14,5 @@ interface CreateSetIterator
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $set, string $kind): ObjectValue;
+    public function __invoke(ObjectValue $set, string $kind): ObjectValue;
 }

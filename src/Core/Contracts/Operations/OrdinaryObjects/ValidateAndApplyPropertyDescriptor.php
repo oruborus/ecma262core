@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\OrdinaryObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -20,5 +19,5 @@ interface ValidateAndApplyPropertyDescriptor
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue|UndefinedValue $object, StringValue|SymbolValue|UndefinedValue $p, BooleanValue $extensible, PropertyDescriptor $descriptor, PropertyDescriptor|UndefinedValue $current): BooleanValue;
+    public function __invoke(ObjectValue|UndefinedValue $object, StringValue|SymbolValue|UndefinedValue $p, BooleanValue $extensible, PropertyDescriptor $descriptor, PropertyDescriptor|UndefinedValue $current): BooleanValue;
 }

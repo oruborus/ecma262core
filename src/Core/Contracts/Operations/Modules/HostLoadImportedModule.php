@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Modules;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\CyclicModuleRecord;
 use Oru\EcmaScript\Core\Contracts\Values\GraphLoadingState;
 use Oru\EcmaScript\Core\Contracts\Values\PromiseCapabilityRecord;
@@ -18,5 +17,5 @@ interface HostLoadImportedModule
     /**
      * @see https://tc39.es/ecma262/#sec-HostLoadImportedModule
      */
-    public function __invoke(Agent $agent, ScriptRecord|CyclicModuleRecord|RealmRecord $referrer, StringValue $specifier, mixed $hostDefined, GraphLoadingState|PromiseCapabilityRecord $payload): UnusedValue;
+    public function __invoke(ScriptRecord|CyclicModuleRecord|RealmRecord $referrer, StringValue $specifier, mixed $hostDefined, GraphLoadingState|PromiseCapabilityRecord $payload): UnusedValue;
 }

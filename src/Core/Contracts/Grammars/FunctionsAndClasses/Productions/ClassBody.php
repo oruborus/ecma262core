@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -16,10 +15,10 @@ interface ClassBody extends Node, HasContains
      *
      * @return ListValue<ClassElement>
      */
-    public function nonConstructorMethodDefinitions(Agent $agent): ListValue;
+    public function nonConstructorMethodDefinitions(): ListValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-constructormethod
      */
-    public function constructorMethod(Agent $agent): ?ClassElement;
+    public function constructorMethod(): ?ClassElement;
 }

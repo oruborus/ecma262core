@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\RuntimeSemantics;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -17,5 +16,5 @@ interface HasBindingInitialization
      *
      * @throws AbruptCompletion
      */
-    public function bindingInitialization(Agent $agent, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): LanguageValue;
+    public function bindingInitialization(LanguageValue $value, UndefinedValue|EnvironmentRecord $environment): LanguageValue;
 }

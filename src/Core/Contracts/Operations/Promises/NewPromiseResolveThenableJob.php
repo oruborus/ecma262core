@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Promises;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\JobCallback;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -17,5 +16,5 @@ interface NewPromiseResolveThenableJob
      *
      * @throws AbruptCompletion 
      */
-    public function __invoke(Agent $agent, ObjectValue $promiseToResolve, ObjectValue $thenable, JobCallback $then): PromiseReactionJob;
+    public function __invoke(ObjectValue $promiseToResolve, ObjectValue $thenable, JobCallback $then): PromiseReactionJob;
 }

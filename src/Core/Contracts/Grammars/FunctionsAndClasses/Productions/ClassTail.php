@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -20,5 +19,5 @@ interface ClassTail extends Node, HasContains
      *
      * @throws AbruptCompletion
      */
-    public function classDefinitionEvaluation(Agent $agent, UndefinedValue|StringValue $classBinding, StringValue|SymbolValue $className): ObjectValue;
+    public function classDefinitionEvaluation(UndefinedValue|StringValue $classBinding, StringValue|SymbolValue $className): ObjectValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\StaticSemantics;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
@@ -15,5 +14,5 @@ interface HasBoundNames
      *
      * @return ListValue<StringValue>
      */
-    public function boundNames(Agent $agent): ListValue;
+    public function boundNames(): ListValue;
 }

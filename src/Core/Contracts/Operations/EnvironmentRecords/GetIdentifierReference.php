@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\EnvironmentRecords;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
@@ -19,5 +18,5 @@ interface GetIdentifierReference
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, EnvironmentRecord|NullValue $env, StringValue $name, BooleanValue $strict): ReferenceRecord;
+    public function __invoke(EnvironmentRecord|NullValue $env, StringValue $name, BooleanValue $strict): ReferenceRecord;
 }

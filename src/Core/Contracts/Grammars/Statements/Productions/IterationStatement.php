@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -18,5 +17,5 @@ interface IterationStatement extends BreakableStatement
      * @param ListValue<StringValue> $labelSet
      * @throws AbruptCompletion
      */
-    public function loopEvaluation(Agent $agent, ListValue $labelSet): LanguageValue;
+    public function loopEvaluation(ListValue $labelSet): LanguageValue;
 }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\StringObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\NumberValue;
@@ -22,5 +21,5 @@ interface GetSubstitution
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, StringValue $matched, StringValue $str, NumberValue $position, ListValue $captures, UndefinedValue|ObjectValue $namedCaptures, StringValue $replacement): StringValue;
+    public function __invoke(StringValue $matched, StringValue $str, NumberValue $position, ListValue $captures, UndefinedValue|ObjectValue $namedCaptures, StringValue $replacement): StringValue;
 }

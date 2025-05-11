@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\ReferenceRecords;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ReferenceRecord;
 use Oru\EcmaScript\Core\Contracts\Values\Value;
@@ -16,5 +15,5 @@ interface IsSuperReference
      *
      * @psalm-assert ReferenceRecord $v
      */
-    public function __invoke(Agent $agent, Value $v): BooleanValue;
+    public function __invoke(Value $v): BooleanValue;
 }

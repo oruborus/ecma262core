@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\GlobalObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\Script;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
@@ -17,5 +16,5 @@ interface EvalDeclarationInstantiation
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, Script $body, EnvironmentRecord $varEnv, EnvironmentRecord $lexEnv, BooleanValue $strict): null;
+    public function __invoke(Script $body, EnvironmentRecord $varEnv, EnvironmentRecord $lexEnv, BooleanValue $strict): null;
 }

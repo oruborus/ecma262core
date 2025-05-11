@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasBoundNames;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
@@ -22,5 +21,5 @@ interface BindingRestProperty extends HasBoundNames, Binding
      * @param ListValue<StringValue|SymbolValue> $excludedNames
      * @throws AbruptCompletion
      */
-    public function restBindingInitialization(Agent $agent, LanguageValue $value, UndefinedValue|EnvironmentRecord $environment, ListValue $excludedNames): LanguageValue;
+    public function restBindingInitialization(LanguageValue $value, UndefinedValue|EnvironmentRecord $environment, ListValue $excludedNames): LanguageValue;
 }

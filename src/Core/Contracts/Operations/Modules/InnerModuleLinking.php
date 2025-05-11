@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Modules;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\CyclicModuleRecord;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -20,5 +19,5 @@ interface InnerModuleLinking
      * 
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ModuleRecord $module, ListValue $stack, NumberValue $index): NumberValue;
+    public function __invoke(ModuleRecord $module, ListValue $stack, NumberValue $index): NumberValue;
 }

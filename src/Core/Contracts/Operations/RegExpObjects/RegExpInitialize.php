@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\RegExpObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
@@ -16,5 +15,5 @@ interface RegExpInitialize
      *
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, ObjectValue $obj, LanguageValue $pattern, LanguageValue $flags): ObjectValue;
+    public function __invoke(ObjectValue $obj, LanguageValue $pattern, LanguageValue $flags): ObjectValue;
 }

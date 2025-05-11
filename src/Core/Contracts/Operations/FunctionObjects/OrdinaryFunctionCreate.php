@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\FunctionObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ConciseBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\PropertySetParameterList;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\UniqueFormalParameters;
@@ -21,5 +20,5 @@ interface OrdinaryFunctionCreate
      * @param ListValue<int> $sourceText
      * @param ThisMode::LEXICAL_THIS|ThisMode::NON_LEXICAL_THIS $thisMode
      */
-    public function __invoke(Agent $agent, ObjectValue $functionPrototype, ListValue $sourceText, UniqueFormalParameters|PropertySetParameterList $parameterList, ConciseBody $body, ThisMode $thisMode, EnvironmentRecord $scope): ObjectValue;
+    public function __invoke(ObjectValue $functionPrototype, ListValue $sourceText, UniqueFormalParameters|PropertySetParameterList $parameterList, ConciseBody $body, ThisMode $thisMode, EnvironmentRecord $scope): ObjectValue;
 }

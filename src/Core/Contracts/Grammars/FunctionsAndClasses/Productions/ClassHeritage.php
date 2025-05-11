@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -16,5 +15,5 @@ interface ClassHeritage extends Node, HasContains
     /**
      * @throws AbruptCompletion
      */
-    public function evaluate(Agent $agent): LanguageValue|ReferenceRecord;
+    public function evaluate(): LanguageValue|ReferenceRecord;
 }

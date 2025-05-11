@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Lexers;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\RegularExpressions\Productions\RegExpIdentifierStart;
 use Oru\EcmaScript\Core\Contracts\Parameters;
 use Oru\EcmaScript\Core\Contracts\Position;
@@ -19,7 +18,6 @@ interface RegExpIdentifierStartLexer
      * @throws ThrowCompletion     
      */
     public function tokenize(
-        Agent $agent,
         SourceText $sourceText,
         Position $position,
         Parameters $parameters,

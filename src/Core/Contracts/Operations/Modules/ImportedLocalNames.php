@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\Modules;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\ImportEntry;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
@@ -17,5 +16,5 @@ interface ImportedLocalNames
      * @param ListValue<ImportEntry> $importEntries
      * @return ListValue<StringValue>
      */
-    public function __invoke(Agent $agent, ListValue $importEntries): ListValue;
+    public function __invoke(ListValue $importEntries): ListValue;
 }

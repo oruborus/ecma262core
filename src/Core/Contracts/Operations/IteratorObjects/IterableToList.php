@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IteratorObjects;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -18,5 +17,5 @@ interface IterableToList
      * @return ListValue<LanguageValue>
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LanguageValue $items, ?ObjectValue $method = null): ListValue;
+    public function __invoke(LanguageValue $items, ?ObjectValue $method = null): ListValue;
 }

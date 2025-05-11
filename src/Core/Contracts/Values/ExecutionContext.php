@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
-use Oru\EcmaScript\Core\Contracts\Values\RealmRecord;
 
 interface ExecutionContext extends SpecificationValue
 {
@@ -34,12 +32,12 @@ interface ExecutionContext extends SpecificationValue
     /**
      * @throws AbruptCompletion
      */
-    public function resume(Agent $agent, null|LanguageValue|AbruptCompletion $resumptionValue = null): LanguageValue;
+    public function resume(null|LanguageValue|AbruptCompletion $resumptionValue = null): LanguageValue;
 
     /**
      * @throws AbruptCompletion
      */
-    public function suspend(Agent $agent, null|LanguageValue|AbruptCompletion $suspensionValue = null): LanguageValue;
+    public function suspend(null|LanguageValue|AbruptCompletion $suspensionValue = null): LanguageValue;
 
     public function isSuspended(): bool;
 
@@ -47,7 +45,7 @@ interface ExecutionContext extends SpecificationValue
      * @param callable(LanguageValue|AbruptCompletion=): LanguageValue $callable
      * @throws AbruptCompletion
      */
-    public function runInContext(Agent $agent, callable $callable): LanguageValue;
+    public function runInContext(callable $callable): LanguageValue;
 
     public function setGenerator(UndefinedValue|ObjectValue $value): void;
 

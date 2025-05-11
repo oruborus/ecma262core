@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasBoundNames;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasIsConstantDeclaration;
 
@@ -13,5 +12,5 @@ interface Declaration extends StatementListItem, HasIsConstantDeclaration, HasBo
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-declarationpart
      */
-    public function declarationPart(Agent $agent): Declaration;
+    public function declarationPart(): Declaration;
 }

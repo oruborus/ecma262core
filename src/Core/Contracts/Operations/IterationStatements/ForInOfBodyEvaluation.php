@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\IterationStatements;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\LeftHandSideExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\ForBinding;
 use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\ForDeclaration;
@@ -24,5 +23,5 @@ interface ForInOfBodyEvaluation
      * @param "sync"|"async" $iteratorKind
      * @throws AbruptCompletion
      */
-    public function __invoke(Agent $agent, LeftHandSideExpression|ForBinding|ForDeclaration $lhs, Statement $stmt, IteratorRecord $iteratorRecord, string $iterationKind, string $lhsKind, ListValue $labelSet, string $iteratorKind = 'sync'): LanguageValue;
+    public function __invoke(LeftHandSideExpression|ForBinding|ForDeclaration $lhs, Statement $stmt, IteratorRecord $iteratorRecord, string $iterationKind, string $lhsKind, ListValue $labelSet, string $iteratorKind = 'sync'): LanguageValue;
 }

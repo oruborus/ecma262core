@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
@@ -21,7 +20,7 @@ interface TemplateSpans extends Node, HasContains
      *
      * @throws AbruptCompletion
      */
-    public function evaluate(Agent $agent): StringValue;
+    public function evaluate(): StringValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-runtime-semantics-substitutionevaluation
@@ -30,12 +29,12 @@ interface TemplateSpans extends Node, HasContains
      *
      * @throws AbruptCompletion
      */
-    public function substitutionEvaluation(Agent $agent): ListValue;
+    public function substitutionEvaluation(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-templatestrings
      *
      * @return ListValue<StringValue|UndefinedValue>
      */
-    public function templateStrings(Agent $agent, BooleanValue $raw): ListValue;
+    public function templateStrings(BooleanValue $raw): ListValue;
 }

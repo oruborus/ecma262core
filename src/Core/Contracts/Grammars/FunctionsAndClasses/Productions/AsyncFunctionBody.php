@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
@@ -19,5 +18,5 @@ interface AsyncFunctionBody extends FunctionBody
      *
      * @throws AbruptCompletion
      */
-    public function evaluateAsyncFunctionBody(Agent $agent, ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
+    public function evaluateAsyncFunctionBody(ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
 }

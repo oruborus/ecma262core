@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
-use Oru\EcmaScript\Core\Contracts\Agent;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -20,12 +19,12 @@ interface TemplateLiteral extends PrimaryExpression
      * @return ListValue<LanguageValue>
      * @throws AbruptCompletion
      */
-    public function argumentListEvaluation(Agent $agent): ListValue;
+    public function argumentListEvaluation(): ListValue;
 
     /**
      * @see https://tc39.es/ecma262/#sec-static-semantics-templatestrings
      *
      * @return ListValue<StringValue|UndefinedValue>
      */
-    public function templateStrings(Agent $agent, BooleanValue $raw): ListValue;
+    public function templateStrings(BooleanValue $raw): ListValue;
 }
