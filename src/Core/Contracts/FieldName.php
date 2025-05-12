@@ -98,12 +98,16 @@ enum FieldName: string
     case OriginalSource       = '[[OriginalSource]]';
     case ParseResult          = '[[ParseResult]]';
     case RegExpRecord         = '[[RegExpRecord]]';
+    case Global               = '[[Global]]';
     case IgnoreCase           = '[[IgnoreCase]]';
+    case IteratingRegExp      = '[[IteratingRegExp]]';
+    case IteratedString       = '[[IteratedString]]';
     case Multiline            = '[[Multiline]]';
     case DotAll               = '[[DotAll]]';
     case Unicode              = '[[Unicode]]';
     case UnicodeSets          = '[[UnicodeSets]]';
     case CapturingGroupsCount = '[[CapturingGroupsCount]]';
+    case Done                 = '[[Done]]';
 
     case SetData = '[[SetData]]';
 
