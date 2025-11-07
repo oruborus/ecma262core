@@ -8,6 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\BindingIdenti
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FormalParameters;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FunctionBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FunctionDeclaration;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface FunctionDeclarationFactory
 {
@@ -15,5 +17,8 @@ interface FunctionDeclarationFactory
         ?BindingIdentifier $bindingIdentifier,
         FormalParameters $formalParameters,
         FunctionBody $functionBody,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): FunctionDeclaration;
 }

@@ -6,13 +6,19 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AdditiveExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\MultiplicativeExpression;
+use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\InputElementType;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface AdditiveExpressionFactory
 {
-    /** @param "+"|"-" $additiveOperator */
+    /** @param InputElementType::Plus|InputElementType::Minus $operator */
     public function create(
         AdditiveExpression $additiveExpression,
-        string $additiveOperator,
+        InputElementType $operator,
         MultiplicativeExpression $multiplicativeExpression,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): AdditiveExpression;
 }

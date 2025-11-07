@@ -6,8 +6,15 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ComputedPropertyName;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface ComputedPropertyNameFactory
 {
-    public function create(AssignmentExpression $assignmentExpression): ComputedPropertyName;
+    public function create(
+        AssignmentExpression $assignmentExpression,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ComputedPropertyName;
 }

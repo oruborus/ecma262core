@@ -8,6 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\BindingIdenti
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FormalParameters;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorDeclaration;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface GeneratorDeclarationFactory
 {
@@ -15,5 +17,8 @@ interface GeneratorDeclarationFactory
         ?BindingIdentifier $bindingIdentifier,
         FormalParameters $formalParameters,
         GeneratorBody $generatorBody,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): GeneratorDeclaration;
 }

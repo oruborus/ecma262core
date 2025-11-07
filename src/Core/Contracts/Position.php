@@ -19,6 +19,7 @@ interface Position
     /** @return non-negative-int */
     public function current(): int;
 
+    /** @param non-negative-int $amount */
     public function advance(int $amount): static;
 
     public function newLine(): static;

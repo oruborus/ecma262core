@@ -198,11 +198,11 @@ interface ValueFactory
     /** @var int[] $values */
     public function createSourceText(array $values): SourceText;
 
+    public function createSourceCode(SourceText $sourceText, Parameters $parameters): SourceCode;
+
     public function createSpecifierModulePair(StringValue $specifier, ModuleRecord $module): SpecifierModulePair;
 
-    /**
-     * @param array<int, int>|string|Stringable $value
-     */
+    /** @param int[]|string|Stringable $value */
     public function createString(string|array|Stringable $value): StringValue;
 
     public function createSymbol(null|string|StringValue|UndefinedValue $description = null): SymbolValue;

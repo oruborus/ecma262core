@@ -10,6 +10,7 @@ use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasPropName;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
+use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
 
@@ -26,4 +27,11 @@ interface ClassElementName extends Node, HasContains, HasPropName
      * @see https://tc39.es/ecma262/#sec-static-semantics-computedpropertycontains
      */
     function computedPropertyContains(string|InputElementType $symbol): BooleanValue;
+
+    /**
+     * @see https://tc39.es/ecma262/#sec-static-semantics-privateboundidentifiers
+     *
+     * @return ListValue<StringValue>
+     */
+    public function privateBoundIdentifiers(): ListValue;
 }

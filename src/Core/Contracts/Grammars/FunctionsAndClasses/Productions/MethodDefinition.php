@@ -9,8 +9,10 @@ use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\InputEleme
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
+use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\MethodDefinitionRecord;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
+use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
 interface MethodDefinition extends PropertyDefinition
 {
@@ -28,8 +30,19 @@ interface MethodDefinition extends PropertyDefinition
      */
     public function defineMethod(ObjectValue $object, ObjectValue $functionPrototype): MethodDefinitionRecord;
 
+    /** @see https://tc39.es/ecma262/#sec-static-semantics-computedpropertycontains */
+    public function computedPropertyContains(string|InputElementType $symbol): BooleanValue;
+
+    /** @see https://tc39.es/ecma262/#sec-static-semantics-hasdirectsuper */
+    public function hasDirectSuper(): BooleanValue;
+
     /**
-     * @see https://tc39.es/ecma262/#sec-static-semantics-computedpropertycontains
+     * @see https://tc39.es/ecma262/#sec-static-semantics-privateboundidentifiers
+     *
+     * @return ListValue<StringValue>
      */
-    function computedPropertyContains(string|InputElementType $symbol): BooleanValue;
+    public function privateBoundIdentifiers(): ListValue;
+
+    /** @see https://tc39.es/ecma262/#sec-static-semantics-specialmethod */
+    public function specialMethod(): BooleanValue;
 }

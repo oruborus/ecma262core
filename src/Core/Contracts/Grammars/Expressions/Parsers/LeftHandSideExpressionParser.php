@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\LeftHandSideExpression;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface LeftHandSideExpressionParser
@@ -16,12 +17,5 @@ interface LeftHandSideExpressionParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?LeftHandSideExpression;
-
-    /**
-     * @see https://tc39.es/ecma262/#prod-LeftHandSideExpression
-     *
-     * @throws ThrowCompletion
-     */
-    public function parseOrFail(Lexer $lexer, Parameters $parameters): LeftHandSideExpression;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?LeftHandSideExpression;
 }

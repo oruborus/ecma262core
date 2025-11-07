@@ -10,8 +10,8 @@ use Iterator;
 
 /**
  * @template TValue
- * @template-extends ArrayAccess<non-negative-int, TValue>
- * @template-extends Iterator<non-negative-int, TValue>
+ * @extends ArrayAccess<non-negative-int, TValue>
+ * @extends Iterator<non-negative-int, TValue>
  */
 interface ListValue extends SpecificationValue, ArrayAccess, Iterator, Countable
 {

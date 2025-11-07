@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Operations\IterationStatements;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\LeftHandSideExpression;
-use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\ForBinding;
-use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\ForDeclaration;
-use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\Statement;
+use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions\ForBinding;
+use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions\ForDeclaration;
+use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions\Statement;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\IteratorRecord;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;

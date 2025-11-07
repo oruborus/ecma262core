@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ArrayAssignmentPattern;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface ArrayAssignmentPatternParser
@@ -16,5 +17,5 @@ interface ArrayAssignmentPatternParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?ArrayAssignmentPattern;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?ArrayAssignmentPattern;
 }

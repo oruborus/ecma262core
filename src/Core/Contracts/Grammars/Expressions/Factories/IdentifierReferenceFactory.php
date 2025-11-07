@@ -6,11 +6,27 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Identifier;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\IdentifierReference;
-use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\IdentifierName;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface IdentifierReferenceFactory
 {
-    public function create(Identifier $identifier): IdentifierReference;
+    public function createWithIdentifier(
+        Identifier $identifier,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): IdentifierReference;
 
-    public function createWithIdentifierName(IdentifierName $identifierName): IdentifierReference;
+    public function createWithYield(
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): IdentifierReference;
+
+    public function createWithAwait(
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): IdentifierReference;
 }

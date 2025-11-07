@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\Module;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface ModuleParser
@@ -16,12 +17,5 @@ interface ModuleParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?Module;
-
-    /**
-     * @see https://tc39.es/ecma262/#prod-Module
-     *
-     * @throws ThrowCompletion
-     */
-    public function parseOrFail(Lexer $lexer, Parameters $parameters): Module;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?Module;
 }

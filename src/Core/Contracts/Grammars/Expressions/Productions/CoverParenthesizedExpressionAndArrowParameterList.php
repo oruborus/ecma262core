@@ -6,7 +6,7 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ArrowFormalParameters;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ArrowParameters;
-use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\BindingPattern;
+use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions\BindingPattern;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContainsExpression;
 use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasIsSimpleParameterList;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;

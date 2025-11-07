@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions;
 
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasStringValue;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 
-interface IdentifierName extends PrivateIdentifier
+interface IdentifierName extends CommonToken, HasStringValue
 {
     public function getType(): InputElementType;
 

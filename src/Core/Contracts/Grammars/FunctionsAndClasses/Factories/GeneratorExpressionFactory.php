@@ -8,12 +8,17 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\BindingIdenti
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FormalParameters;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorExpression;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface GeneratorExpressionFactory
 {
     public function create(
         ?BindingIdentifier $bindingIdentifier,
         FormalParameters $formalParameters,
-        GeneratorBody $generatorBody
+        GeneratorBody $generatorBody,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): GeneratorExpression;
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions;
 
-interface RegularExpressionLiteral extends InputElementRegExp, InputElementRegExpOrTemplateTail
+interface RegularExpressionLiteral extends InputElementRegExp, InputElementRegExpOrTemplateTail, InputElementHashbangOrRegExp
 {
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-bodytext

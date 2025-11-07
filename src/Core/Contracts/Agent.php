@@ -6,12 +6,16 @@ namespace Oru\EcmaScript\Core\Contracts;
 
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ExecutionContext;
+use Oru\EcmaScript\Core\Contracts\Values\GoalSymbol;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\SourceText;
+use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
 
 interface Agent extends Container
 {
+    public GoalSymbol $goalSymbol { get; set; }
+
     public function setStrict(bool $strict): void;
 
     public function isStrictCode(): bool;

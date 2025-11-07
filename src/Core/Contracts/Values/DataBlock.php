@@ -9,7 +9,7 @@ use Countable;
 use Iterator;
 
 /**
- * @template-extends ArrayAccess<int, int>
- * @template-extends Iterator<int, int>
+ * @extends ArrayAccess<int, int>
+ * @extends Iterator<int, int>
  */
 interface DataBlock extends SpecificationValue, ArrayAccess, Iterator, Countable {}

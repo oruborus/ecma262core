@@ -5,23 +5,17 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\AsyncFunctionExpression;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface AsyncFunctionExpressionParser
 {
     /**
-     * @see https://262.ecma-international.org/12.0/#prod-AsyncFunctionExpression
+     * @see https://tc39.es/ecma262/#prod-AsyncFunctionDeclaration
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?AsyncFunctionExpression;
-
-    /**
-     * @see https://262.ecma-international.org/12.0/#prod-AsyncFunctionExpression
-     *
-     * @throws ThrowCompletion
-     */
-    public function parseOrFail(Lexer $lexer, Parameters $parameters): AsyncFunctionExpression;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?AsyncFunctionExpression;
 }

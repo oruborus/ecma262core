@@ -6,8 +6,15 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentRestElement;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\DestructuringAssignmentTarget;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface AssignmentRestElementFactory
 {
-    public function create(DestructuringAssignmentTarget $destructuringAssignmentTarget): AssignmentRestElement;
+    public function create(
+        DestructuringAssignmentTarget $destructuringAssignmentTarget,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): AssignmentRestElement;
 }

@@ -6,13 +6,18 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ExponentiationExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\MultiplicativeExpression;
+use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\MultiplicativeOperator;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface MultiplicativeExpressionFactory
 {
-    /** @param "*"|"/"|"%" $multiplicativeOperator */
     public function create(
         MultiplicativeExpression $multiplicativeExpression,
-        string $multiplicativeOperator,
+        MultiplicativeOperator $multiplicativeOperator,
         ExponentiationExpression $exponentiationExpression,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): MultiplicativeExpression;
 }

@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\UniqueFormalParameters;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface UniqueFormalParametersParser
@@ -16,12 +17,5 @@ interface UniqueFormalParametersParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?UniqueFormalParameters;
-
-    /**
-     * @see https://tc39.es/ecma262/#prod-UniqueFormalParameters
-     *
-     * @throws ThrowCompletion
-     */
-    public function parseOrFail(Lexer $lexer, Parameters $parameters): UniqueFormalParameters;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): UniqueFormalParameters;
 }

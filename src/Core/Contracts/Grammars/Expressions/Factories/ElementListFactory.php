@@ -8,6 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentExp
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ElementList;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Elision;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\SpreadElement;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface ElementListFactory
 {
@@ -15,5 +17,8 @@ interface ElementListFactory
         ?ElementList $elementList,
         ?Elision $elision,
         AssignmentExpression|SpreadElement $element,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): ElementList;
 }

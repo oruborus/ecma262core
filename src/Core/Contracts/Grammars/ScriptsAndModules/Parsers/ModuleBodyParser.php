@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\ModuleBody;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface ModuleBodyParser
@@ -16,5 +17,5 @@ interface ModuleBodyParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?ModuleBody;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?ModuleBody;
 }

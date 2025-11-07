@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ParenthesizedExpression;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface ParenthesizedExpressionParser
@@ -16,5 +17,5 @@ interface ParenthesizedExpressionParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?ParenthesizedExpression;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?ParenthesizedExpression;
 }

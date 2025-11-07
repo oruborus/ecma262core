@@ -8,6 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\Async
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\AsyncMethod;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ClassElementName;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\UniqueFormalParameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface AsyncMethodFactory
 {
@@ -15,5 +17,8 @@ interface AsyncMethodFactory
         ClassElementName $classElementName,
         UniqueFormalParameters $uniqueFormalParameters,
         AsyncFunctionBody $asyncFunctionBody,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): AsyncMethod;
 }

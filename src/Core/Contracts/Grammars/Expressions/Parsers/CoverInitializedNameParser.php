@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\CoverInitializedName;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface CoverInitializedNameParser
@@ -16,5 +17,5 @@ interface CoverInitializedNameParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?CoverInitializedName;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?CoverInitializedName;
 }

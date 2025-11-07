@@ -6,8 +6,15 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\SpreadElement;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface SpreadElementFactory
 {
-    public function create(AssignmentExpression $assignmentExpression): SpreadElement;
+    public function create(
+        AssignmentExpression $assignmentExpression,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): SpreadElement;
 }

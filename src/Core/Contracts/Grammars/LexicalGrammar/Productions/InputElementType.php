@@ -147,6 +147,7 @@ enum InputElementType: string
     case QuestionMarkDot             = '?.';
     case DoubleQuestionMark          = '??';
     case DoubleQuestionMarkEquals    = '??=';
+    case Pound                       = '#';
 
     case Async      = 'async';
     case As         = 'as';
@@ -264,6 +265,51 @@ enum InputElementType: string
         };
     }
 
+    public function isReservedWord(): bool
+    {
+        return match ($this) {
+            static::Await,
+            static::Break,
+            static::Case,
+            static::Catch_,
+            static::Class_,
+            static::Const,
+            static::Continue,
+            static::Debugger,
+            static::Default,
+            static::Delete,
+            static::Do,
+            static::Else,
+            static::Enum,
+            static::Export,
+            static::Extends,
+            static::False,
+            static::Finally_,
+            static::For,
+            static::Function,
+            static::If,
+            static::Import,
+            static::In,
+            static::Instanceof,
+            static::New,
+            static::Null,
+            static::Return,
+            static::Super,
+            static::Switch,
+            static::This,
+            static::Throw,
+            static::True,
+            static::Try,
+            static::Typeof,
+            static::Var,
+            static::Void,
+            static::While,
+            static::With,
+            static::Yield => true,
+            default => false,
+        };
+    }
+
     /**
      * @param array<int, int> $codePoints
      * @psalm-mutation-free
@@ -328,6 +374,7 @@ enum InputElementType: string
             [0x003F, 0x002E]                         => static::QuestionMarkDot,
             [0x003F, 0x003F]                         => static::DoubleQuestionMark,
             [0x003F, 0x003F, 0x003D]                 => static::DoubleQuestionMarkEquals,
+            [0x0023]                                 => static::Pound,
 
             [0x0061, 0x0073, 0x0079, 0x006E, 0x0063]                                         => static::Async,
             [0x0061, 0x0073]                                                                 => static::As,
@@ -450,6 +497,7 @@ enum InputElementType: string
             static::QuestionMarkDot             => [0x003F, 0x002E],
             static::DoubleQuestionMark          => [0x003F, 0x003F],
             static::DoubleQuestionMarkEquals    => [0x003F, 0x003F, 0x003D],
+            static::Pound                       => [0x0023],
 
             static::As               => [0x0061, 0x0073],
             static::Async            => [0x0061, 0x0073, 0x0079, 0x006E, 0x0063],

@@ -8,6 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\BindingIdenti
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\AsyncGeneratorBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\AsyncGeneratorDeclaration;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FormalParameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface AsyncGeneratorDeclarationFactory
 {
@@ -15,5 +17,8 @@ interface AsyncGeneratorDeclarationFactory
         ?BindingIdentifier $bindingIdentifier,
         FormalParameters $formalParameters,
         AsyncGeneratorBody $asyncGeneratorBody,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): AsyncGeneratorDeclaration;
 }

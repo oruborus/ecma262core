@@ -6,12 +6,24 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\ObjectLiteral;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\PropertyDefinitionList;
+use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface ObjectLiteralFactory
 {
-    /** @param array<int, int> $sourceTextMatched */
-    public function create(PropertyDefinitionList $propertyDefinitionList, array $sourceTextMatched): ObjectLiteral;
+    public function create(
+        PropertyDefinitionList $propertyDefinitionList,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+        Parameters $parameters,
+    ): ObjectLiteral;
 
-    /** @param array<int, int> $sourceTextMatched */
-    public function createEmpty(array $sourceTextMatched): ObjectLiteral;
+    public function createEmpty(
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+        Parameters $parameters,
+    ): ObjectLiteral;
 }

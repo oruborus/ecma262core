@@ -9,13 +9,31 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentPro
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\IdentifierReference;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Initializer;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\PropertyName;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface AssignmentPropertyFactory
 {
-    public function create(PropertyName $propertyName, AssignmentElement $assignmentElement): AssignmentProperty;
+    public function create(
+        PropertyName $propertyName,
+        AssignmentElement $assignmentElement,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): AssignmentProperty;
 
     public function createWithIdentifierReference(
         IdentifierReference $identifierReference,
-        ?Initializer $initializer,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): AssignmentProperty;
+
+    public function createWithIdentifierReferenceAndInitializer(
+        IdentifierReference $identifierReference,
+        Initializer $initializer,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): AssignmentProperty;
 }

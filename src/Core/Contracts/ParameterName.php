@@ -12,6 +12,7 @@ enum ParameterName: string
     case NAMED_CAPTURE_GROUPS = 'NamedCaptureGroups';
     case RETURN               = 'RETURN';
     case SEP                  = 'SEP';
+    case TAGGED               = 'TAGGED';
     case UNICODE_MODE         = 'UnicodeMode';
     case UNICODE_SETS_MODE    = 'UnicodeSetsMode';
     case YIELD                = 'YIELD';

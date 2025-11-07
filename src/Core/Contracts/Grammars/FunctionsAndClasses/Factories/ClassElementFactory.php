@@ -8,18 +8,49 @@ use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\Class
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ClassStaticBlock;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\FieldDefinition;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\MethodDefinition;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface ClassElementFactory
 {
-    public function createEmpty(): ClassElement;
+    public function createEmpty(
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassElement;
 
-    public function createWithMethodDefinition(MethodDefinition $methodDefinition): ClassElement;
+    public function createWithMethodDefinition(
+        MethodDefinition $methodDefinition,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassElement;
 
-    public function createWithStaticMethodDefinition(MethodDefinition $methodDefinition): ClassElement;
+    public function createWithStaticMethodDefinition(
+        MethodDefinition $methodDefinition,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassElement;
 
-    public function createWithFieldDefinition(FieldDefinition $fieldDefinition): ClassElement;
+    public function createWithFieldDefinition(
+        FieldDefinition $fieldDefinition,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassElement;
 
-    public function createWithStaticFieldDefinition(FieldDefinition $fieldDefinition): ClassElement;
+    public function createWithStaticFieldDefinition(
+        FieldDefinition $fieldDefinition,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassElement;
 
-    public function createWithClassStaticBlock(ClassStaticBlock $classStaticBlock): ClassElement;
+    public function createWithClassStaticBlock(
+        ClassStaticBlock $classStaticBlock,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassElement;
 }

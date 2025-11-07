@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions;
 
+use Oru\EcmaScript\Core\Contracts\Grammars\Node;
+use Oru\EcmaScript\Core\Contracts\StaticSemantics\HasContains;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
@@ -11,7 +13,7 @@ use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 
-interface ConciseBody extends FunctionStatementList
+interface ConciseBody extends Node, HasContains
 {
     /**
      * @throws AbruptCompletion
@@ -26,10 +28,9 @@ interface ConciseBody extends FunctionStatementList
      */
     public function evaluateBody(ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
 
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-static-semantics-functionbodycontainsusestrict
-     */
-    public function functionBodyContainsUseStrict(): BooleanValue;
+
+    /** @see https://tc39.es/ecma262/#sec-static-semantics-concisebodycontainsusestrict */
+    public function conciseBodyContainsUseStrict(): BooleanValue;
 
     /**
      * @see https://262.ecma-international.org/12.0/#sec-static-semantics-lexicallydeclarednames

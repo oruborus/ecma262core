@@ -8,8 +8,17 @@ use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Expression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\SubstitutionTemplate;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\TemplateSpans;
 use Oru\EcmaScript\Core\Contracts\Grammars\LexicalGrammar\Productions\TemplateHead;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface SubstitutionTemplateFactory
 {
-    public function create(TemplateHead $templateHead, Expression $expression, TemplateSpans $templateSpans): SubstitutionTemplate;
+    public function create(
+        TemplateHead $templateHead,
+        Expression $expression,
+        TemplateSpans $templateSpans,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): SubstitutionTemplate;
 }

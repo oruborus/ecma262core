@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Parsers;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\ScriptsAndModules\Productions\ModuleItemList;
-use Oru\EcmaScript\Core\Contracts\Lexer;
 use Oru\EcmaScript\Core\Contracts\Parameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 use Oru\EcmaScript\Core\Contracts\Values\ThrowCompletion;
 
 interface ModuleItemListParser
@@ -16,5 +17,5 @@ interface ModuleItemListParser
      *
      * @throws ThrowCompletion
      */
-    public function parse(Lexer $lexer, Parameters $parameters): ?ModuleItemList;
+    public function parse(SourceCode $sourceCode, Position $position, Parameters $parameters): ?ModuleItemList;
 }

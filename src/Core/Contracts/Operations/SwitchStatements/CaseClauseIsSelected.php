@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Operations\SwitchStatements;
 
-use Oru\EcmaScript\Core\Contracts\Grammars\Statements\Productions\CaseClause;
+use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions\CaseClause;
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;

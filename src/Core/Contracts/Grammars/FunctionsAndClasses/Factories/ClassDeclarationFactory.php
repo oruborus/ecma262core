@@ -7,8 +7,16 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Factories;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\BindingIdentifier;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ClassDeclaration;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\ClassTail;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface ClassDeclarationFactory
 {
-    public function create(?BindingIdentifier $bindingIdentifier, ClassTail $classTail): ClassDeclaration;
+    public function create(
+        ?BindingIdentifier $bindingIdentifier,
+        ClassTail $classTail,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): ClassDeclaration;
 }

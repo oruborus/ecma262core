@@ -8,6 +8,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\Class
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorMethod;
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\UniqueFormalParameters;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface GeneratorMethodFactory
 {
@@ -15,5 +17,8 @@ interface GeneratorMethodFactory
         ClassElementName $classElementName,
         UniqueFormalParameters $uniqueFormalParameters,
         GeneratorBody $generatorBody,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
     ): GeneratorMethod;
 }

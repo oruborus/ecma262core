@@ -6,8 +6,15 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Factories;
 
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\AssignmentExpression;
 use Oru\EcmaScript\Core\Contracts\Grammars\Expressions\Productions\Initializer;
+use Oru\EcmaScript\Core\Contracts\Position;
+use Oru\EcmaScript\Core\Contracts\Values\SourceCode;
 
 interface InitializerFactory
 {
-    public function create(AssignmentExpression $assignmentExpression): Initializer;
+    public function create(
+        AssignmentExpression $assignmentExpression,
+        SourceCode $sourceCode,
+        Position $position,
+        Position $next,
+    ): Initializer;
 }
