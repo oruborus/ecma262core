@@ -6,12 +6,11 @@ namespace Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions
 
 use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions\HoistableDeclaration;
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
+use Oru\EcmaScript\Core\Contracts\Values\NullValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 
 interface AsyncFunctionDeclaration extends HoistableDeclaration
 {
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-instantiatasyncfunctionobject
-     */
-    public function instantiateAsyncFunctionObject(EnvironmentRecord $scope): ObjectValue;
+    /** @see https://tc39.es/ecma262/#sec-runtime-semantics-instantiateasyncfunctionobject */
+    public function instantiateAsyncFunctionObject(EnvironmentRecord $env, NullValue|EnvironmentRecord $privateEnv): ObjectValue;
 }

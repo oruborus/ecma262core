@@ -10,18 +10,22 @@ enum FieldName: string
     case DYNAMICALLY_CREATED_FUNCTION_OBJECT = '__DynamicallyCreatedFunctionObject__';
     case PARSED_PATTERN = '__ParsedPattern__';
 
-    case Environment        = '[[Environment]]';
-    case FormalParameters   = '[[FormalParameters]]';
-    case ECMAScriptCode     = '[[ECMAScriptCode]]';
-    case ConstructorKind    = '[[ConstructorKind]]';
-    case Realm              = '[[Realm]]';
-    case ScriptOrModule     = '[[ScriptOrModule]]';
-    case ThisMode           = '[[ThisMode]]';
-    case Strict             = '[[Strict]]';
-    case HomeObject         = '[[HomeObject]]';
-    case SourceText         = '[[SourceText]]';
-    case IsClassConstructor = '[[IsClassConstructor]]';
-    case InitialName        = '[[InitialName]]';
+    case Environment               = '[[Environment]]';
+    case PrivateEnvironment        = '[[PrivateEnvironment]]';
+    case FormalParameters          = '[[FormalParameters]]';
+    case ECMAScriptCode            = '[[ECMAScriptCode]]';
+    case ConstructorKind           = '[[ConstructorKind]]';
+    case Realm                     = '[[Realm]]';
+    case ScriptOrModule            = '[[ScriptOrModule]]';
+    case ThisMode                  = '[[ThisMode]]';
+    case Strict                    = '[[Strict]]';
+    case HomeObject                = '[[HomeObject]]';
+    case SourceText                = '[[SourceText]]';
+    case Fields                    = '[[Fields]]';
+    case PrivateMethods            = '[[PrivateMethods]]';
+    case ClassFieldInitializerName = '[[ClassFieldInitializerName]]';
+    case IsClassConstructor        = '[[IsClassConstructor]]';
+    case InitialName               = '[[InitialName]]';
 
     case Call      = '[[Call]]';
     case Construct = '[[Construct]]';

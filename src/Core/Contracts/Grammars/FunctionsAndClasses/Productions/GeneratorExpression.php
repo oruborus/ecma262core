@@ -9,6 +9,7 @@ use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
 use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
+use Oru\EcmaScript\Core\Contracts\Values\PrivateName;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
 
@@ -26,8 +27,6 @@ interface GeneratorExpression extends PrimaryExpression
      */
     public function namedEvaluation(StringValue|SymbolValue $name): LanguageValue;
 
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-instantiategeneratorfunctionexpression
-     */
-    public function instantiateGeneratorFunctionExpression(null|StringValue|SymbolValue $name = null): ObjectValue;
+    /** @see https://tc39.es/ecma262/#sec-runtime-semantics-instantiategeneratorfunctionexpression */
+    public function instantiateGeneratorFunctionExpression(null|StringValue|SymbolValue|PrivateName $name = null): ObjectValue;
 }

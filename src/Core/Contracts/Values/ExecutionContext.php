@@ -25,6 +25,10 @@ interface ExecutionContext extends SpecificationValue
 
     public function getLexicalEnvironment(): EnvironmentRecord;
 
+    public function setPrivateEnvironment(EnvironmentRecord $privateEnvironment): void;
+
+    public function getPrivateEnvironment(): NullValue|EnvironmentRecord;
+
     public function setVariableEnvironment(EnvironmentRecord $variableEnvironment): void;
 
     public function getVariableEnvironment(): EnvironmentRecord;

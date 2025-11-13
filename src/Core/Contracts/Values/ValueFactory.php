@@ -40,7 +40,15 @@ interface ValueFactory
 
     public function createEnvironment(): EnvironmentRecord;
 
-    public function createExecutionContext(ObjectValue|NullValue $function, RealmRecord $realm, ScriptRecord|ModuleRecord|NullValue $scriptOrModule, null|NullValue|EnvironmentRecord $lexicalEnvironment = null, null|NullValue|EnvironmentRecord $variableEnvironment = null, null|UndefinedValue|ObjectValue $generator = null): ExecutionContext;
+    public function createExecutionContext(
+        ObjectValue|NullValue $function,
+        RealmRecord $realm,
+        ScriptRecord|ModuleRecord|NullValue $scriptOrModule,
+        null|NullValue|EnvironmentRecord $lexicalEnvironment = null,
+        null|NullValue|EnvironmentRecord $variableEnvironment = null,
+        null|NullValue|EnvironmentRecord $privateEnvironment = null,
+        null|UndefinedValue|ObjectValue $generator = null,
+    ): ExecutionContext;
 
     /**
      * @param StringValue|NullValue|ImportName::ALL|ImportName::ALL_BUT_DEFAULT $importName

@@ -13,18 +13,19 @@ use Oru\EcmaScript\Core\Contracts\Values\ListValue;
 use Oru\EcmaScript\Core\Contracts\Values\MethodDefinitionRecord;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
+use Oru\EcmaScript\Core\Contracts\Values\UnusedValue;
 
 interface MethodDefinition extends PropertyDefinition
 {
     /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-methoddefinitionevaluation
+     * @see https://tc39.es/ecma262/#sec-runtime-semantics-methoddefinitionevaluation
      *
      * @throws AbruptCompletion
      */
-    public function methodDefinitionEvaluation(ObjectValue $object, BooleanValue $enumerable): LanguageValue;
+    public function methodDefinitionEvaluation(ObjectValue $object, BooleanValue $enumerable): UnusedValue;
 
     /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-definemethod
+     * @see https://tc39.es/ecma262/#sec-runtime-semantics-definemethod
      *
      * @throws AbruptCompletion
      */

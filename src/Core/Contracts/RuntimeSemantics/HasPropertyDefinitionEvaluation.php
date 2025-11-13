@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace Oru\EcmaScript\Core\Contracts\RuntimeSemantics;
 
 use Oru\EcmaScript\Core\Contracts\Values\AbruptCompletion;
-use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
-use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
+use Oru\EcmaScript\Core\Contracts\Values\UnusedValue;
 
 interface HasPropertyDefinitionEvaluation
 {
     /**
-     * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-propertydefinitionevaluation
+     * @see https://tc39.es/ecma262/#sec-runtime-semantics-propertydefinitionevaluation
      *
      * @throws AbruptCompletion
      */
-    public function propertyDefinitionEvaluation(ObjectValue $object, BooleanValue $enumerable): LanguageValue;
+    public function propertyDefinitionEvaluation(ObjectValue $object): UnusedValue;
 }
