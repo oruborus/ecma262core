@@ -16,6 +16,10 @@ interface Agent extends Container
 {
     public GoalSymbol $goalSymbol { get; set; }
 
+    public bool $inIterationStatement { get; set; }
+
+    public bool $inSwitchStatement { get; set; }
+
     public function setStrict(bool $strict): void;
 
     public function isStrictCode(): bool;
@@ -30,10 +34,6 @@ interface Agent extends Container
     /** @return string[] */
     public function currentLabelSet(): array;
 
-    public function setInIterationOrSwitchStatement(bool $inIterationOrSwitchStatement): void;
-
-    public function inIterationOrSwitchStatement(): bool;
-
     public function setCurrentFile(?string $file = null): void;
 
     public function getCurrentFile(): ?string;
@@ -46,18 +46,14 @@ interface Agent extends Container
 
     public function getRunningExecutionContext(): ExecutionContext;
 
-    /**
-     * @return ExecutionContext[]
-     */
+    /** @return ExecutionContext[] */
     public function getExecutionContextStack(): array;
 
     public function popExecutionContextStack(ExecutionContext $executionContext): ExecutionContext;
 
     public function pushExecutionContextStack(ExecutionContext $executionContext): void;
 
-    /**
-     * @param array<string, SymbolValue> $wellKnownSymbols
-     */
+    /** @param array<string, SymbolValue> $wellKnownSymbols */
     public function setWellKnownSymbols(array $wellKnownSymbols): void;
 
     /** @var ListValue<array{key: StringValue, symbol: SymbolValue}> $globalSymbolRegistry */
