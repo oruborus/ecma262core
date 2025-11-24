@@ -17,7 +17,7 @@ use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
  * @see https://tc39.es/ecma262/#sec-agent-record
  * @see https://tc39.es/ecma262/#table-agent-record
  */
-interface Agent extends Container
+interface Agent
 {
     public BooleanValue $littleEndian { get; }
 
