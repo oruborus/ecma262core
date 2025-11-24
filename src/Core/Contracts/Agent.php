@@ -8,41 +8,56 @@ use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
 use Oru\EcmaScript\Core\Contracts\Values\ExecutionContext;
 use Oru\EcmaScript\Core\Contracts\Values\GoalSymbol;
 use Oru\EcmaScript\Core\Contracts\Values\ListValue;
+use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
 use Oru\EcmaScript\Core\Contracts\Values\SourceText;
 use Oru\EcmaScript\Core\Contracts\Values\StringValue;
 use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
 
+/**
+ * @see https://tc39.es/ecma262/#sec-agent-record
+ * @see https://tc39.es/ecma262/#table-agent-record
+ */
 interface Agent extends Container
 {
+    public BooleanValue $littleEndian { get; }
+
+    public BooleanValue $canBlock { get; set; }
+
+    public string $signifier { get; }
+
+    public BooleanValue $isLockFree1 { get; }
+
+    public BooleanValue $isLockFree2 { get; }
+
+    public BooleanValue $isLockFree8 { get; }
+
+    // FIXME: Implement Agent::[[CandidateExecution]]
+    // public CandidateExecutionRecord $candidateExecution { get; set; }
+
+    /** @var ListValue<ObjectValue|SymbolValue> $keptAlive */
+    public ListValue $keptAlive { get; set; }
+
+    public int $moduleAsyncEvaluationCount { get; set; }
+
     public GoalSymbol $goalSymbol { get; set; }
 
     public bool $inIterationStatement { get; set; }
 
     public bool $inSwitchStatement { get; set; }
 
-    public function setStrict(bool $strict): void;
+    public bool $strict { get; set; }
 
-    public function isStrictCode(): bool;
+    public bool $inEval { get; set; }
 
-    public function setInEval(bool $inEval): void;
+    /** @var string[] $currentLabelSet */
+    public array $currentLabelSet { get; set; }
 
-    public function inEval(): bool;
+    public ?string $currentFile { get; set; }
 
-    /** @param string[] $currentLabelSet */
-    public function setCurrentLabelSet(array $currentLabelSet): void;
+    public ?SourceText $currentSourceText { get; set; }
 
-    /** @return string[] */
-    public function currentLabelSet(): array;
-
-    public function setCurrentFile(?string $file = null): void;
-
-    public function getCurrentFile(): ?string;
-
-    public function setCurrentSourceText(?SourceText $sourceText = null): void;
-
-    public function getCurrentSourceText(): ?SourceText;
-
-    public function engine(): Engine;
+    /** @var ListValue<array{key: StringValue, symbol: SymbolValue}> $globalSymbolRegistry */
+    public ListValue $globalSymbolRegistry { get; }
 
     public function getRunningExecutionContext(): ExecutionContext;
 
@@ -55,11 +70,6 @@ interface Agent extends Container
 
     /** @param array<string, SymbolValue> $wellKnownSymbols */
     public function setWellKnownSymbols(array $wellKnownSymbols): void;
-
-    /** @var ListValue<array{key: StringValue, symbol: SymbolValue}> $globalSymbolRegistry */
-    public ListValue $globalSymbolRegistry { get; }
-
-    public function getLittleEndian(): BooleanValue;
 
     public function getWellKnownSymbol(WellKnownSymbol $wellKnownSymbol): SymbolValue;
 
