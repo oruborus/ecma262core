@@ -10,8 +10,6 @@ use Oru\EcmaScript\Core\Contracts\Values\UndefinedValue;
 
 interface FromPropertyDescriptor
 {
-    /**
-     * @see https://262.ecma-international.org/12.0/#sec-frompropertydescriptor
-     */
+    /** @see https://tc39.es/ecma262/#sec-frompropertydescriptor */
     public function __invoke(UndefinedValue|PropertyDescriptor $desc): ObjectValue|UndefinedValue;
 }
