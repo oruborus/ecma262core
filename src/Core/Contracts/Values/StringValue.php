@@ -4,14 +4,8 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-use Stringable;
-
-interface StringValue extends LanguageValue, Stringable
+interface StringValue extends PrimitiveValue
 {
-    public function __toString(): string;
-
-    public function getValue(): string;
-
     /**
      * @return array<int, int>
      */

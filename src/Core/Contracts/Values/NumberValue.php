@@ -7,7 +7,9 @@ namespace Oru\EcmaScript\Core\Contracts\Values;
 
 interface NumberValue extends NumericValue
 {
-    public function getValue(): float;
+    public float $float { get; }
+
+    public int $int { get; }
 
     public function unit(): NumberValue;
 

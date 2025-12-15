@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\Values;
 
-interface BooleanValue extends LanguageValue
+interface BooleanValue extends PrimitiveValue
 {
-    public function getValue(): bool;
+    public bool $bool { get; }
 }

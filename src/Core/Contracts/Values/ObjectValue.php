@@ -7,8 +7,9 @@ namespace Oru\EcmaScript\Core\Contracts\Values;
 use Closure;
 use Generator;
 use Oru\EcmaScript\Core\Contracts\FieldName;
+use Stringable;
 
-interface ObjectValue extends LanguageValue
+interface ObjectValue extends LanguageValue, Stringable
 {
     public function hasInternalSlot(FieldName $slot): bool;
 
@@ -34,7 +35,7 @@ interface ObjectValue extends LanguageValue
     /**
      * @throws AbruptCompletion
      */
-    public function setPrototypeOf(ObjectValue|NullValue $v): LanguageValue;
+    public function setPrototypeOf(ObjectValue|NullValue $v): BooleanValue;
 
     public function isExtensible(): BooleanValue;
 
