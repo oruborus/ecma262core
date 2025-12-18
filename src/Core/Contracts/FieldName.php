@@ -10,120 +10,120 @@ enum FieldName: string
     case DYNAMICALLY_CREATED_FUNCTION_OBJECT = '__DynamicallyCreatedFunctionObject__';
     case PARSED_PATTERN = '__ParsedPattern__';
 
-    case Environment               = '[[Environment]]';
-    case PrivateEnvironment        = '[[PrivateEnvironment]]';
-    case FormalParameters          = '[[FormalParameters]]';
-    case ECMAScriptCode            = '[[ECMAScriptCode]]';
-    case ConstructorKind           = '[[ConstructorKind]]';
-    case Realm                     = '[[Realm]]';
-    case ScriptOrModule            = '[[ScriptOrModule]]';
-    case ThisMode                  = '[[ThisMode]]';
-    case Strict                    = '[[Strict]]';
-    case HomeObject                = '[[HomeObject]]';
-    case SourceText                = '[[SourceText]]';
-    case Fields                    = '[[Fields]]';
-    case PrivateMethods            = '[[PrivateMethods]]';
-    case ClassFieldInitializerName = '[[ClassFieldInitializerName]]';
-    case IsClassConstructor        = '[[IsClassConstructor]]';
-    case InitialName               = '[[InitialName]]';
+    case Environment               = '⟦Environment⟧';
+    case PrivateEnvironment        = '⟦PrivateEnvironment⟧';
+    case FormalParameters          = '⟦FormalParameters⟧';
+    case ECMAScriptCode            = '⟦ECMAScriptCode⟧';
+    case ConstructorKind           = '⟦ConstructorKind⟧';
+    case Realm                     = '⟦Realm⟧';
+    case ScriptOrModule            = '⟦ScriptOrModule⟧';
+    case ThisMode                  = '⟦ThisMode⟧';
+    case Strict                    = '⟦Strict⟧';
+    case HomeObject                = '⟦HomeObject⟧';
+    case SourceText                = '⟦SourceText⟧';
+    case Fields                    = '⟦Fields⟧';
+    case PrivateMethods            = '⟦PrivateMethods⟧';
+    case ClassFieldInitializerName = '⟦ClassFieldInitializerName⟧';
+    case IsClassConstructor        = '⟦IsClassConstructor⟧';
+    case InitialName               = '⟦InitialName⟧';
 
-    case Call      = '[[Call]]';
-    case Construct = '[[Construct]]';
+    case Call      = '⟦Call⟧';
+    case Construct = '⟦Construct⟧';
 
-    case ArrayBufferData       = '[[ArrayBufferData]]';
-    case ArrayBufferByteLength = '[[ArrayBufferByteLength]]';
-    case ArrayBufferDetachKey  = '[[ArrayBufferDetachKey]]';
-    case ViewedArrayBuffer     = '[[ViewedArrayBuffer]]';
+    case ArrayBufferData       = '⟦ArrayBufferData⟧';
+    case ArrayBufferByteLength = '⟦ArrayBufferByteLength⟧';
+    case ArrayBufferDetachKey  = '⟦ArrayBufferDetachKey⟧';
+    case ViewedArrayBuffer     = '⟦ViewedArrayBuffer⟧';
 
-    case BigIntData = '[[BigIntData]]';
+    case BigIntData = '⟦BigIntData⟧';
 
-    case BooleanData = '[[BooleanData]]';
+    case BooleanData = '⟦BooleanData⟧';
 
-    case BoundTargetFunction = '[[BoundTargetFunction]]';
-    case BoundThis           = '[[BoundThis]]';
-    case BoundArguments      = '[[BoundArguments]]';
+    case BoundTargetFunction = '⟦BoundTargetFunction⟧';
+    case BoundThis           = '⟦BoundThis⟧';
+    case BoundArguments      = '⟦BoundArguments⟧';
 
-    case DateValue = '[[DateValue]]';
+    case DateValue = '⟦DateValue⟧';
 
-    case ErrorData = '[[ErrorData]]';
+    case ErrorData = '⟦ErrorData⟧';
 
-    case ParameterMap = '[[ParameterMap]]';
+    case ParameterMap = '⟦ParameterMap⟧';
 
-    case AsyncGeneratorState   = '[[AsyncGeneratorState]]';
-    case AsyncGeneratorContext = '[[AsyncGeneratorContext]]';
-    case AsyncGeneratorQueue   = '[[AsyncGeneratorQueue]]';
-    case Generator             = '[[Generator]]';
-    case GeneratorState        = '[[GeneratorState]]';
-    case GeneratorContext      = '[[GeneratorContext]]';
-    case GeneratorBrand        = '[[GeneratorBrand]]';
+    case AsyncGeneratorState   = '⟦AsyncGeneratorState⟧';
+    case AsyncGeneratorContext = '⟦AsyncGeneratorContext⟧';
+    case AsyncGeneratorQueue   = '⟦AsyncGeneratorQueue⟧';
+    case Generator             = '⟦Generator⟧';
+    case GeneratorState        = '⟦GeneratorState⟧';
+    case GeneratorContext      = '⟦GeneratorContext⟧';
+    case GeneratorBrand        = '⟦GeneratorBrand⟧';
 
-    case Object           = '[[Object]]';
-    case ObjectWasVisited = '[[ObjectWasVisited]]';
-    case VisitedKeys      = '[[VisitedKeys]]';
-    case RemainingKeys    = '[[RemainingKeys]]';
+    case Object           = '⟦Object⟧';
+    case ObjectWasVisited = '⟦ObjectWasVisited⟧';
+    case VisitedKeys      = '⟦VisitedKeys⟧';
+    case RemainingKeys    = '⟦RemainingKeys⟧';
 
-    case MapData = '[[MapData]]';
+    case MapData = '⟦MapData⟧';
 
-    case Exports = '[[Exports]]';
-    case Module  = '[[Module]]';
+    case Exports = '⟦Exports⟧';
+    case Module  = '⟦Module⟧';
 
-    case NumberData = '[[NumberData]]';
+    case NumberData = '⟦NumberData⟧';
 
-    case Prototype         = '[[Prototype]]';
-    case GetPrototypeOf    = '[[GetPrototypeOf]]';
-    case SetPrototypeOf    = '[[SetPrototypeOf]]';
-    case Extensible        = '[[Extensible]]';
-    case IsExtensible      = '[[IsExtensible]]';
-    case PreventExtensions = '[[PreventExtensions]]';
-    case GetOwnProperty    = '[[GetOwnProperty]]';
-    case DefineOwnProperty = '[[DefineOwnProperty]]';
-    case HasProperty       = '[[HasProperty]]';
-    case Get               = '[[Get]]';
-    case Set               = '[[Set]]';
-    case Delete            = '[[Delete]]';
-    case OwnPropertyKeys   = '[[OwnPropertyKeys]]';
+    case Prototype         = '⟦Prototype⟧';
+    case GetPrototypeOf    = '⟦GetPrototypeOf⟧';
+    case SetPrototypeOf    = '⟦SetPrototypeOf⟧';
+    case Extensible        = '⟦Extensible⟧';
+    case IsExtensible      = '⟦IsExtensible⟧';
+    case PreventExtensions = '⟦PreventExtensions⟧';
+    case GetOwnProperty    = '⟦GetOwnProperty⟧';
+    case DefineOwnProperty = '⟦DefineOwnProperty⟧';
+    case HasProperty       = '⟦HasProperty⟧';
+    case Get               = '⟦Get⟧';
+    case Set               = '⟦Set⟧';
+    case Delete            = '⟦Delete⟧';
+    case OwnPropertyKeys   = '⟦OwnPropertyKeys⟧';
 
-    case PrivateElements   = '[[PrivateElements]]';
+    case PrivateElements   = '⟦PrivateElements⟧';
 
-    case Promise                 = '[[Promise]]';
-    case PromiseState            = '[[PromiseState]]';
-    case PromiseResult           = '[[PromiseResult]]';
-    case PromiseFulfillReactions = '[[PromiseFulfillReactions]]';
-    case PromiseRejectReactions  = '[[PromiseRejectReactions]]';
-    case PromiseIsHandled        = '[[PromiseIsHandled]]';
-    case AlreadyResolved         = '[[AlreadyResolved]]';
+    case Promise                 = '⟦Promise⟧';
+    case PromiseState            = '⟦PromiseState⟧';
+    case PromiseResult           = '⟦PromiseResult⟧';
+    case PromiseFulfillReactions = '⟦PromiseFulfillReactions⟧';
+    case PromiseRejectReactions  = '⟦PromiseRejectReactions⟧';
+    case PromiseIsHandled        = '⟦PromiseIsHandled⟧';
+    case AlreadyResolved         = '⟦AlreadyResolved⟧';
 
-    case ProxyHandler   = '[[ProxyHandler]]';
-    case ProxyTarget    = '[[ProxyTarget]]';
-    case RevocableProxy = '[[RevocableProxy]]';
+    case ProxyHandler   = '⟦ProxyHandler⟧';
+    case ProxyTarget    = '⟦ProxyTarget⟧';
+    case RevocableProxy = '⟦RevocableProxy⟧';
 
-    case RegExpMatcher        = '[[RegExpMatcher]]';
-    case OriginalFlags        = '[[OriginalFlags]]';
-    case OriginalSource       = '[[OriginalSource]]';
-    case ParseResult          = '[[ParseResult]]';
-    case RegExpRecord         = '[[RegExpRecord]]';
-    case Global               = '[[Global]]';
-    case IgnoreCase           = '[[IgnoreCase]]';
-    case IteratingRegExp      = '[[IteratingRegExp]]';
-    case IteratedString       = '[[IteratedString]]';
-    case Multiline            = '[[Multiline]]';
-    case DotAll               = '[[DotAll]]';
-    case Unicode              = '[[Unicode]]';
-    case UnicodeSets          = '[[UnicodeSets]]';
-    case CapturingGroupsCount = '[[CapturingGroupsCount]]';
-    case Done                 = '[[Done]]';
+    case RegExpMatcher        = '⟦RegExpMatcher⟧';
+    case OriginalFlags        = '⟦OriginalFlags⟧';
+    case OriginalSource       = '⟦OriginalSource⟧';
+    case ParseResult          = '⟦ParseResult⟧';
+    case RegExpRecord         = '⟦RegExpRecord⟧';
+    case Global               = '⟦Global⟧';
+    case IgnoreCase           = '⟦IgnoreCase⟧';
+    case IteratingRegExp      = '⟦IteratingRegExp⟧';
+    case IteratedString       = '⟦IteratedString⟧';
+    case Multiline            = '⟦Multiline⟧';
+    case DotAll               = '⟦DotAll⟧';
+    case Unicode              = '⟦Unicode⟧';
+    case UnicodeSets          = '⟦UnicodeSets⟧';
+    case CapturingGroupsCount = '⟦CapturingGroupsCount⟧';
+    case Done                 = '⟦Done⟧';
 
-    case SetData = '[[SetData]]';
+    case SetData = '⟦SetData⟧';
 
-    case StringData = '[[StringData]]';
+    case StringData = '⟦StringData⟧';
 
-    case SymbolData = '[[SymbolData]]';
+    case SymbolData = '⟦SymbolData⟧';
 
-    case ArrayLength     = '[[ArrayLength]]';
-    case ByteLength      = '[[ByteLength]]';
-    case ByteOffset      = '[[ByteOffset]]';
-    case ContentType     = '[[ContentType]]';
-    case TypedArrayName  = '[[TypedArrayName]]';
+    case ArrayLength     = '⟦ArrayLength⟧';
+    case ByteLength      = '⟦ByteLength⟧';
+    case ByteOffset      = '⟦ByteOffset⟧';
+    case ContentType     = '⟦ContentType⟧';
+    case TypedArrayName  = '⟦TypedArrayName⟧';
 
-    case SyncIteratorRecord = '[[SyncIteratorRecord]]';
+    case SyncIteratorRecord = '⟦SyncIteratorRecord⟧';
 }

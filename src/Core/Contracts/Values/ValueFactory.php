@@ -46,7 +46,7 @@ interface ValueFactory
         ScriptRecord|ModuleRecord|NullValue $scriptOrModule,
         null|NullValue|EnvironmentRecord $lexicalEnvironment = null,
         null|NullValue|EnvironmentRecord $variableEnvironment = null,
-        null|NullValue|EnvironmentRecord $privateEnvironment = null,
+        null|NullValue|PrivateEnvironmentRecord $privateEnvironment = null,
         null|UndefinedValue|ObjectValue $generator = null,
     ): ExecutionContext;
 

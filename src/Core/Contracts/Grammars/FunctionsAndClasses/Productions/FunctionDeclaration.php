@@ -8,9 +8,10 @@ use Oru\EcmaScript\Core\Contracts\Grammars\StatementsAndDeclarations\Productions
 use Oru\EcmaScript\Core\Contracts\Values\EnvironmentRecord;
 use Oru\EcmaScript\Core\Contracts\Values\NullValue;
 use Oru\EcmaScript\Core\Contracts\Values\ObjectValue;
+use Oru\EcmaScript\Core\Contracts\Values\PrivateEnvironmentRecord;
 
 interface FunctionDeclaration extends HoistableDeclaration
 {
     /** @see https://tc39.es/ecma262/#sec-runtime-semantics-instantiateordinaryfunctionobject */
-    public function instantiateOrdinaryFunctionObject(EnvironmentRecord $env, NullValue|EnvironmentRecord $privateEnv): ObjectValue;
+    public function instantiateOrdinaryFunctionObject(EnvironmentRecord $env, NullValue|PrivateEnvironmentRecord $privateEnv): ObjectValue;
 }

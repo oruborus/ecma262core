@@ -21,6 +21,14 @@ interface ConciseBody extends Node, HasContains
     public function evaluate(): LanguageValue;
 
     /**
+     * @see https://tc39.es/ecma262/#sec-runtime-semantics-evaluatebody
+     *
+     * @param ListValue<LanguageValue> $argumentsList
+     * @throws AbruptCompletion
+     */
+    public function evaluateFunctionBody(ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
+
+    /**
      * @see https://262.ecma-international.org/12.0/#sec-runtime-semantics-evaluatebody
      *
      * @param ListValue<LanguageValue> $argumentsList

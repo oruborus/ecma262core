@@ -19,6 +19,14 @@ interface AsyncConciseBody extends Node, HasContains
      * @param ListValue<LanguageValue> $argumentsList
      * @throws AbruptCompletion
      */
+    public function evaluateFunctionBody(ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
+
+    /**
+     * @see https://tc39.es/ecma262/#sec-runtime-semantics-evaluatebody
+     *
+     * @param ListValue<LanguageValue> $argumentsList
+     * @throws AbruptCompletion
+     */
     public function evaluateBody(ObjectValue $functionObject, ListValue $argumentsList): LanguageValue;
 
     /** @see https://tc39.es/ecma262/#sec-static-semantics-asyncconcisebodycontainsusestrict */

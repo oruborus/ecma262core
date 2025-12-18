@@ -4,4 +4,28 @@ declare(strict_types=1);
 
 namespace Oru\EcmaScript\Core\Contracts\DefaultMethods;
 
-interface ArgumentsObjects extends HasDefaultMethods {}
+use Closure;
+use Oru\EcmaScript\Core\Contracts\Values\BooleanValue;
+use Oru\EcmaScript\Core\Contracts\Values\LanguageValue;
+use Oru\EcmaScript\Core\Contracts\Values\PropertyDescriptor;
+use Oru\EcmaScript\Core\Contracts\Values\StringValue;
+use Oru\EcmaScript\Core\Contracts\Values\SymbolValue;
+use Oru\EcmaScript\Core\Contracts\Values\UndefinedValue;
+
+interface ArgumentsObjects
+{
+    /** @var Closure(StringValue|SymbolValue):PropertyDescriptor|UndefinedValue $⟦GetOwnProperty⟧ */
+    public Closure $⟦GetOwnProperty⟧ { get; }
+
+    /** @var Closure(StringValue|SymbolValue, PropertyDescriptor):BooleanValue $⟦DefineOwnProperty⟧ */
+    public Closure $⟦DefineOwnProperty⟧ { get; }
+
+    /** @var Closure(StringValue|SymbolValue, LanguageValue):LanguageValue $⟦Get⟧ */
+    public Closure $⟦Get⟧ { get; }
+
+    /** @var Closure(StringValue|SymbolValue, LanguageValue, LanguageValue):LanguageValue $⟦Set⟧ */
+    public Closure $⟦Set⟧ { get; }
+
+    /** @var Closure(StringValue|SymbolValue):BooleanValue $⟦Delete⟧ */
+    public Closure $⟦Delete⟧ { get; }
+}
