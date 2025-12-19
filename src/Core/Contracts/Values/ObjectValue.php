@@ -16,9 +16,8 @@ use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\Funct
 use Oru\EcmaScript\Core\Contracts\Grammars\FunctionsAndClasses\Productions\GeneratorBody;
 use Oru\EcmaScript\Core\Contracts\Grammars\Node;
 use Oru\EcmaScript\Support\Behaviour;
-use Stringable;
 
-interface ObjectValue extends LanguageValue, Stringable
+interface ObjectValue extends LanguageValue
 {
     public function setPropertyDescriptor(StringValue|SymbolValue $propertyKey, PropertyDescriptor $propertyDescriptor): void;
 
